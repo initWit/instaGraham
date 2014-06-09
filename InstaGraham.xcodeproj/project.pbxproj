@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6622AFE319467A3000D6D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE219467A2F00D6D3BD /* Foundation.framework */; };
+		6622AFE519467A3000D6D3BD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE419467A3000D6D3BD /* CoreGraphics.framework */; };
+		6622AFE719467A3000D6D3BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE619467A3000D6D3BD /* UIKit.framework */; };
+		6622AFED19467A3000D6D3BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6622AFEB19467A3000D6D3BD /* InfoPlist.strings */; };
+		6622AFEF19467A3000D6D3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFEE19467A3000D6D3BD /* main.m */; };
+		6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFF219467A3000D6D3BD /* AppDelegate.m */; };
+		6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6622AFF419467A3000D6D3BD /* Main.storyboard */; };
+		6622AFF919467A3000D6D3BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFF819467A3000D6D3BD /* ViewController.m */; };
+		6622AFFB19467A3000D6D3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6622AFFA19467A3000D6D3BD /* Images.xcassets */; };
+		6622B00219467A3000D6D3BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B00119467A3000D6D3BD /* XCTest.framework */; };
+		6622B00319467A3000D6D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE219467A2F00D6D3BD /* Foundation.framework */; };
+		6622B00419467A3000D6D3BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE619467A3000D6D3BD /* UIKit.framework */; };
+		6622B00C19467A3000D6D3BD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6622B00A19467A3000D6D3BD /* InfoPlist.strings */; };
+		6622B00E19467A3000D6D3BD /* InstaGrahamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622B00D19467A3000D6D3BD /* InstaGrahamTests.m */; };
+		6622B01819467BB600D6D3BD /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01719467BB600D6D3BD /* Parse.framework */; };
+		6622B01A19467D0E00D6D3BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01919467D0E00D6D3BD /* AudioToolbox.framework */; };
+		6622B01C19467D1500D6D3BD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01B19467D1500D6D3BD /* CFNetwork.framework */; };
+		6622B01E19467D1E00D6D3BD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01D19467D1E00D6D3BD /* CoreLocation.framework */; };
+		6622B02019467D2800D6D3BD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01F19467D2800D6D3BD /* libz.dylib */; };
+		6622B02219467D3800D6D3BD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02119467D3800D6D3BD /* MobileCoreServices.framework */; };
+		6622B02419467D3D00D6D3BD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02319467D3D00D6D3BD /* QuartzCore.framework */; };
+		6622B02619467D4200D6D3BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02519467D4200D6D3BD /* Security.framework */; };
+		6622B02819467D4600D6D3BD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02719467D4600D6D3BD /* StoreKit.framework */; };
+		6622B02A19467D5000D6D3BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02919467D5000D6D3BD /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6622B00519467A3000D6D3BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6622AFD719467A2F00D6D3BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6622AFDE19467A2F00D6D3BD;
+			remoteInfo = InstaGraham;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6622AFDF19467A2F00D6D3BD /* InstaGraham.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGraham.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6622AFE219467A2F00D6D3BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6622AFE419467A3000D6D3BD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6622AFE619467A3000D6D3BD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6622AFEA19467A3000D6D3BD /* InstaGraham-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaGraham-Info.plist"; sourceTree = "<group>"; };
+		6622AFEC19467A3000D6D3BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6622AFEE19467A3000D6D3BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6622AFF019467A3000D6D3BD /* InstaGraham-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaGraham-Prefix.pch"; sourceTree = "<group>"; };
+		6622AFF119467A3000D6D3BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6622AFF219467A3000D6D3BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6622AFF519467A3000D6D3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6622AFF719467A3000D6D3BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6622AFF819467A3000D6D3BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6622AFFA19467A3000D6D3BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6622B00019467A3000D6D3BD /* InstaGrahamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaGrahamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6622B00119467A3000D6D3BD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6622B00919467A3000D6D3BD /* InstaGrahamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaGrahamTests-Info.plist"; sourceTree = "<group>"; };
+		6622B00B19467A3000D6D3BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6622B00D19467A3000D6D3BD /* InstaGrahamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaGrahamTests.m; sourceTree = "<group>"; };
+		6622B01719467BB600D6D3BD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		6622B01919467D0E00D6D3BD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6622B01B19467D1500D6D3BD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6622B01D19467D1E00D6D3BD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6622B01F19467D2800D6D3BD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		6622B02119467D3800D6D3BD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		6622B02319467D3D00D6D3BD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6622B02519467D4200D6D3BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6622B02719467D4600D6D3BD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6622B02919467D5000D6D3BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6622AFDC19467A2F00D6D3BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622B02A19467D5000D6D3BD /* SystemConfiguration.framework in Frameworks */,
+				6622B02819467D4600D6D3BD /* StoreKit.framework in Frameworks */,
+				6622B02619467D4200D6D3BD /* Security.framework in Frameworks */,
+				6622B02419467D3D00D6D3BD /* QuartzCore.framework in Frameworks */,
+				6622B02219467D3800D6D3BD /* MobileCoreServices.framework in Frameworks */,
+				6622B02019467D2800D6D3BD /* libz.dylib in Frameworks */,
+				6622B01E19467D1E00D6D3BD /* CoreLocation.framework in Frameworks */,
+				6622AFE519467A3000D6D3BD /* CoreGraphics.framework in Frameworks */,
+				6622B01C19467D1500D6D3BD /* CFNetwork.framework in Frameworks */,
+				6622B01A19467D0E00D6D3BD /* AudioToolbox.framework in Frameworks */,
+				6622AFE719467A3000D6D3BD /* UIKit.framework in Frameworks */,
+				6622B01819467BB600D6D3BD /* Parse.framework in Frameworks */,
+				6622AFE319467A3000D6D3BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6622AFFD19467A3000D6D3BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622B00219467A3000D6D3BD /* XCTest.framework in Frameworks */,
+				6622B00419467A3000D6D3BD /* UIKit.framework in Frameworks */,
+				6622B00319467A3000D6D3BD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6622AFD619467A2F00D6D3BD = {
+			isa = PBXGroup;
+			children = (
+				6622AFE819467A3000D6D3BD /* InstaGraham */,
+				6622B00719467A3000D6D3BD /* InstaGrahamTests */,
+				6622AFE119467A2F00D6D3BD /* Frameworks */,
+				6622AFE019467A2F00D6D3BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6622AFE019467A2F00D6D3BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6622AFDF19467A2F00D6D3BD /* InstaGraham.app */,
+				6622B00019467A3000D6D3BD /* InstaGrahamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6622AFE119467A2F00D6D3BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6622B02919467D5000D6D3BD /* SystemConfiguration.framework */,
+				6622B02719467D4600D6D3BD /* StoreKit.framework */,
+				6622B02519467D4200D6D3BD /* Security.framework */,
+				6622B02319467D3D00D6D3BD /* QuartzCore.framework */,
+				6622B02119467D3800D6D3BD /* MobileCoreServices.framework */,
+				6622B01F19467D2800D6D3BD /* libz.dylib */,
+				6622B01D19467D1E00D6D3BD /* CoreLocation.framework */,
+				6622B01B19467D1500D6D3BD /* CFNetwork.framework */,
+				6622B01919467D0E00D6D3BD /* AudioToolbox.framework */,
+				6622B01719467BB600D6D3BD /* Parse.framework */,
+				6622AFE219467A2F00D6D3BD /* Foundation.framework */,
+				6622AFE419467A3000D6D3BD /* CoreGraphics.framework */,
+				6622AFE619467A3000D6D3BD /* UIKit.framework */,
+				6622B00119467A3000D6D3BD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6622AFE819467A3000D6D3BD /* InstaGraham */ = {
+			isa = PBXGroup;
+			children = (
+				6622AFF119467A3000D6D3BD /* AppDelegate.h */,
+				6622AFF219467A3000D6D3BD /* AppDelegate.m */,
+				6622AFF419467A3000D6D3BD /* Main.storyboard */,
+				6622AFF719467A3000D6D3BD /* ViewController.h */,
+				6622AFF819467A3000D6D3BD /* ViewController.m */,
+				6622AFFA19467A3000D6D3BD /* Images.xcassets */,
+				6622AFE919467A3000D6D3BD /* Supporting Files */,
+			);
+			path = InstaGraham;
+			sourceTree = "<group>";
+		};
+		6622AFE919467A3000D6D3BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6622AFEA19467A3000D6D3BD /* InstaGraham-Info.plist */,
+				6622AFEB19467A3000D6D3BD /* InfoPlist.strings */,
+				6622AFEE19467A3000D6D3BD /* main.m */,
+				6622AFF019467A3000D6D3BD /* InstaGraham-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6622B00719467A3000D6D3BD /* InstaGrahamTests */ = {
+			isa = PBXGroup;
+			children = (
+				6622B00D19467A3000D6D3BD /* InstaGrahamTests.m */,
+				6622B00819467A3000D6D3BD /* Supporting Files */,
+			);
+			path = InstaGrahamTests;
+			sourceTree = "<group>";
+		};
+		6622B00819467A3000D6D3BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6622B00919467A3000D6D3BD /* InstaGrahamTests-Info.plist */,
+				6622B00A19467A3000D6D3BD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6622AFDE19467A2F00D6D3BD /* InstaGraham */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6622B01119467A3000D6D3BD /* Build configuration list for PBXNativeTarget "InstaGraham" */;
+			buildPhases = (
+				6622AFDB19467A2F00D6D3BD /* Sources */,
+				6622AFDC19467A2F00D6D3BD /* Frameworks */,
+				6622AFDD19467A2F00D6D3BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstaGraham;
+			productName = InstaGraham;
+			productReference = 6622AFDF19467A2F00D6D3BD /* InstaGraham.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6622AFFF19467A3000D6D3BD /* InstaGrahamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6622B01419467A3000D6D3BD /* Build configuration list for PBXNativeTarget "InstaGrahamTests" */;
+			buildPhases = (
+				6622AFFC19467A3000D6D3BD /* Sources */,
+				6622AFFD19467A3000D6D3BD /* Frameworks */,
+				6622AFFE19467A3000D6D3BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6622B00619467A3000D6D3BD /* PBXTargetDependency */,
+			);
+			name = InstaGrahamTests;
+			productName = InstaGrahamTests;
+			productReference = 6622B00019467A3000D6D3BD /* InstaGrahamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6622AFD719467A2F00D6D3BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					6622AFFF19467A3000D6D3BD = {
+						TestTargetID = 6622AFDE19467A2F00D6D3BD;
+					};
+				};
+			};
+			buildConfigurationList = 6622AFDA19467A2F00D6D3BD /* Build configuration list for PBXProject "InstaGraham" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6622AFD619467A2F00D6D3BD;
+			productRefGroup = 6622AFE019467A2F00D6D3BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6622AFDE19467A2F00D6D3BD /* InstaGraham */,
+				6622AFFF19467A3000D6D3BD /* InstaGrahamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6622AFDD19467A2F00D6D3BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622AFFB19467A3000D6D3BD /* Images.xcassets in Resources */,
+				6622AFED19467A3000D6D3BD /* InfoPlist.strings in Resources */,
+				6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6622AFFE19467A3000D6D3BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622B00C19467A3000D6D3BD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6622AFDB19467A2F00D6D3BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622AFF919467A3000D6D3BD /* ViewController.m in Sources */,
+				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
+				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6622AFFC19467A3000D6D3BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6622B00E19467A3000D6D3BD /* InstaGrahamTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6622B00619467A3000D6D3BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6622AFDE19467A2F00D6D3BD /* InstaGraham */;
+			targetProxy = 6622B00519467A3000D6D3BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6622AFEB19467A3000D6D3BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6622AFEC19467A3000D6D3BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6622AFF419467A3000D6D3BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6622AFF519467A3000D6D3BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6622B00A19467A3000D6D3BD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6622B00B19467A3000D6D3BD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6622B00F19467A3000D6D3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6622B01019467A3000D6D3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6622B01219467A3000D6D3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
+				INFOPLIST_FILE = "InstaGraham/InstaGraham-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6622B01319467A3000D6D3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
+				INFOPLIST_FILE = "InstaGraham/InstaGraham-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6622B01519467A3000D6D3BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaGraham.app/InstaGraham";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "InstaGrahamTests/InstaGrahamTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6622B01619467A3000D6D3BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaGraham.app/InstaGraham";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
+				INFOPLIST_FILE = "InstaGrahamTests/InstaGrahamTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6622AFDA19467A2F00D6D3BD /* Build configuration list for PBXProject "InstaGraham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6622B00F19467A3000D6D3BD /* Debug */,
+				6622B01019467A3000D6D3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6622B01119467A3000D6D3BD /* Build configuration list for PBXNativeTarget "InstaGraham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6622B01219467A3000D6D3BD /* Debug */,
+				6622B01319467A3000D6D3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6622B01419467A3000D6D3BD /* Build configuration list for PBXNativeTarget "InstaGrahamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6622B01519467A3000D6D3BD /* Debug */,
+				6622B01619467A3000D6D3BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6622AFD719467A2F00D6D3BD /* Project object */;
+}
