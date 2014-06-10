@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2F68C39-B72C-45C4-9A8D-FCC0A5A6F73A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>InstaGraham</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E687B626-7899-4636-85CB-E364F41E5B58</key>
+		<string>https://github.com/initWit/instaGraham.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>InstaGraham.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E687B626-7899-4636-85CB-E364F41E5B58</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/initWit/instaGraham.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E687B626-7899-4636-85CB-E364F41E5B58</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E687B626-7899-4636-85CB-E364F41E5B58</string>
+			<key>IDESourceControlWCCName</key>
+			<string>instaGraham</string>
+		</dict>
+	</array>
+</dict>
+</plist>

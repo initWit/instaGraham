@@ -14,7 +14,7 @@
 		6622AFEF19467A3000D6D3BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFEE19467A3000D6D3BD /* main.m */; };
 		6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFF219467A3000D6D3BD /* AppDelegate.m */; };
 		6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6622AFF419467A3000D6D3BD /* Main.storyboard */; };
-		6622AFF919467A3000D6D3BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFF819467A3000D6D3BD /* ViewController.m */; };
+		6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6622AFF819467A3000D6D3BD /* HomeViewController.m */; };
 		6622AFFB19467A3000D6D3BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6622AFFA19467A3000D6D3BD /* Images.xcassets */; };
 		6622B00219467A3000D6D3BD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B00119467A3000D6D3BD /* XCTest.framework */; };
 		6622B00319467A3000D6D3BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE219467A2F00D6D3BD /* Foundation.framework */; };
@@ -31,6 +31,7 @@
 		6622B02619467D4200D6D3BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02519467D4200D6D3BD /* Security.framework */; };
 		6622B02819467D4600D6D3BD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02719467D4600D6D3BD /* StoreKit.framework */; };
 		6622B02A19467D5000D6D3BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02919467D5000D6D3BD /* SystemConfiguration.framework */; };
+		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,8 @@
 		6622AFF119467A3000D6D3BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6622AFF219467A3000D6D3BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6622AFF519467A3000D6D3BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6622AFF719467A3000D6D3BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6622AFF819467A3000D6D3BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6622AFF719467A3000D6D3BD /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6622AFF819467A3000D6D3BD /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6622AFFA19467A3000D6D3BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6622B00019467A3000D6D3BD /* InstaGrahamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaGrahamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6622B00119467A3000D6D3BD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -73,6 +74,8 @@
 		6622B02519467D4200D6D3BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6622B02719467D4600D6D3BD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6622B02919467D5000D6D3BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		95576CD819471F25008D5757 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +158,10 @@
 				6622AFF119467A3000D6D3BD /* AppDelegate.h */,
 				6622AFF219467A3000D6D3BD /* AppDelegate.m */,
 				6622AFF419467A3000D6D3BD /* Main.storyboard */,
-				6622AFF719467A3000D6D3BD /* ViewController.h */,
-				6622AFF819467A3000D6D3BD /* ViewController.m */,
+				6622AFF719467A3000D6D3BD /* HomeViewController.h */,
+				6622AFF819467A3000D6D3BD /* HomeViewController.m */,
+				95576CD819471F25008D5757 /* PostTableViewCell.h */,
+				95576CD919471F25008D5757 /* PostTableViewCell.m */,
 				6622AFFA19467A3000D6D3BD /* Images.xcassets */,
 				6622AFE919467A3000D6D3BD /* Supporting Files */,
 			);
@@ -288,9 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6622AFF919467A3000D6D3BD /* ViewController.m in Sources */,
+				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
+				95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +509,7 @@
 				6622B01319467A3000D6D3BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6622B01419467A3000D6D3BD /* Build configuration list for PBXNativeTarget "InstaGrahamTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +518,7 @@
 				6622B01619467A3000D6D3BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

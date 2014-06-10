@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  InstaGraham
 //
-//  Created by Robert Figueras on 6/9/14.
+//  Created by Robert Figueras and Dennis Dixon on 6/9/14.
 //
 //
 
