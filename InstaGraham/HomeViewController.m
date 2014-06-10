@@ -120,14 +120,24 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-//    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
-    NSString *modelTestString = [self.photoObjectsArray objectAtIndex:indexPath.row];
-    NSLog(@"modelTestString is %@",modelTestString);
-    cell.textLabel.text = modelTestString;
+    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+    PFFile *imageFile = [currentPhotoObject objectForKey:@"image"];
 
+    dispatch_queue_t bkgndQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(bkgndQueue,^{
+        NSData *dataOfFile = [imageFile getData];
+        if (dataOfFile) {
+            dispatch_async(dispatch_get_main_queue(),^{
+                cell.imageView.image = [UIImage imageWithData:dataOfFile];
+                [cell setNeedsLayout];
+            });
+        }
+    });
 
-//    cell.textLabel.text = currentPhotoObject.username;
-//    cell.imageView.image = currentPhotoObject.image;
+//    NSString *modelTestString = [self.photoObjectsArray objectAtIndex:indexPath.row];
+//    NSLog(@"modelTestString is %@",modelTestString);
+//    cell.textLabel.text = modelTestString;
+
 
     return cell;
 }
