@@ -16,13 +16,13 @@
 
 @end
 
-@interface InstaGrahamModelManager : PFObject
+@interface InstaGrahamModelManager : NSObject
 
 @property (strong, nonatomic) id<InstaGrahamModelManagerDelegate> delegate;
 
-- (void)getPhotoSetOnUser:(PFUser *)username includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion;
+- (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion;
 
-- (void)getPhotoSetOnUser:(PFUser *)username includingFollowings:(BOOL)includingFollowings;
+- (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings;
 
 
 @end

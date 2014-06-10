@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import <Parse/Parse.h>
 #import "Photo.h"
-// #import "InstaGrahamModelManager.h"
+#import "InstaGrahamModelManager.h"
 
 
 @interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *photoStreamTableView;
 //@property InstaGrahamModelManager *modelManager;
 @property NSArray *photoObjectsArray;
+@property (strong, nonatomic) InstaGrahamModelManager *modelManager;
 
 @end
 
@@ -29,8 +30,8 @@
 {
     [super viewDidLoad];
 
-
     self.photoObjectsArray = [[NSArray alloc] init];
+    self.modelManager = [[InstaGrahamModelManager alloc] init];
 
     // self.modelManager = [InstaGrahamModelManager alloc] init];
     // [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollings:YES];
@@ -48,6 +49,12 @@
         self.signUpViewController.delegate = self;
         [self presentViewController:self.logInViewController animated:YES completion:nil];
     }
+    [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:YES completion:^(NSArray *photoSet) {
+        self.photoObjectsArray = photoSet;
+        NSLog(@"self.photoObjectsArray is %@",self.photoObjectsArray);
+        [self.photoStreamTableView reloadData];
+    }];
+
 }
 
 
