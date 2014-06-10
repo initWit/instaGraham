@@ -34,6 +34,7 @@
 		6622B0841947721200D6D3BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
 		6622B086194772AD00D6D3BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
+		959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		6622B085194772AD00D6D3BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		95576CD819471F25008D5757 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaGrahamModelManager.h; sourceTree = "<group>"; };
+		959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaGrahamModelManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				95576CD919471F25008D5757 /* PostTableViewCell.m */,
 				6622AFFA19467A3000D6D3BD /* Images.xcassets */,
 				6622AFE919467A3000D6D3BD /* Supporting Files */,
+				959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */,
+				959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */,
 			);
 			path = InstaGraham;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */,
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
