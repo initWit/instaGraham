@@ -9,15 +9,15 @@
 #import "HomeViewController.h"
 #import <Parse/Parse.h>
 #import "Photo.h"
-// #import "InstaGrahamModelManager.h"
+#import "InstaGrahamModelManager.h"
 
 
-@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, InstaGrahamModelManagerDelegate>
 
 @property (strong,nonatomic) PFLogInViewController *logInViewController;
 @property (strong,nonatomic) PFSignUpViewController *signUpViewController;
 @property (strong, nonatomic) IBOutlet UITableView *photoStreamTableView;
-//@property InstaGrahamModelManager *modelManager;
+@property InstaGrahamModelManager *modelManager;
 @property NSArray *photoObjectsArray;
 
 @end
@@ -29,11 +29,11 @@
 {
     [super viewDidLoad];
 
-
     self.photoObjectsArray = [[NSArray alloc] init];
+    self.modelManager = [[InstaGrahamModelManager alloc] init];
 
-    // self.modelManager = [InstaGrahamModelManager alloc] init];
-    // [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollings:YES];
+//    self.modelManager.delegate = self;
+//    [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:YES];
 
 }
 
@@ -48,6 +48,12 @@
         self.signUpViewController.delegate = self;
         [self presentViewController:self.logInViewController animated:YES completion:nil];
     }
+
+    [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:YES completion:^(NSArray *photoSet) {
+        self.photoObjectsArray = photoSet;
+        NSLog(@"self.photoObjectsArray is %@",self.photoObjectsArray);
+        [self.photoStreamTableView reloadData];
+    }];
 }
 
 
@@ -106,13 +112,19 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.photoObjectsArray.count;
+    NSLog(@"self.photoObjectsArray.count is %i",self.photoObjectsArray.count);
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+//    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+    NSString *modelTestString = [self.photoObjectsArray objectAtIndex:indexPath.row];
+    NSLog(@"modelTestString is %@",modelTestString);
+    cell.textLabel.text = modelTestString;
+
 
 //    cell.textLabel.text = currentPhotoObject.username;
 //    cell.imageView.image = currentPhotoObject.image;
@@ -123,13 +135,11 @@
 
 #pragma mark - InstaGrahamModelManager delegate method
 
-// Completion Block
-//- (void)getPhotoSetOnUser:(PFUser *)username includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion;
-
 // Delegate Method
-//- (void) modelManager (InstaGrahamModelManager *)modelManager didPullPhotoSets:(NSArray *)photoSet
+//- (void)modelManager:(InstaGrahamModelManager *)modelManager didPullPhotoSet:(NSArray *)photoSet
 //{
-//    // self.photoObjectsArray = photoSet;
+//    self.photoObjectsArray = photoSet;
+//    NSLog(@"self.photoObjectsArray is %@",self.photoObjectsArray);
 //}
 
 

@@ -16,7 +16,7 @@
 
 @end
 
-@interface InstaGrahamModelManager : PFObject
+@interface InstaGrahamModelManager : NSObject
 
 @property (strong, nonatomic) id<InstaGrahamModelManagerDelegate> delegate;
 
