@@ -33,6 +33,7 @@
 		6622B02A19467D5000D6D3BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02919467D5000D6D3BD /* SystemConfiguration.framework */; };
 		6622B0841947721200D6D3BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
 		6622B086194772AD00D6D3BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
+		66C2957719478ACD009CEE22 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C2957619478ACD009CEE22 /* Photo.m */; };
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		6622B02919467D5000D6D3BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6622B0831947721200D6D3BD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6622B085194772AD00D6D3BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		66C2957519478ACD009CEE22 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		66C2957619478ACD009CEE22 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		95576CD819471F25008D5757 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 				6622AFF419467A3000D6D3BD /* Main.storyboard */,
 				6622AFF719467A3000D6D3BD /* HomeViewController.h */,
 				6622AFF819467A3000D6D3BD /* HomeViewController.m */,
+				66C2957519478ACD009CEE22 /* Photo.h */,
+				66C2957619478ACD009CEE22 /* Photo.m */,
 				95576CD819471F25008D5757 /* PostTableViewCell.h */,
 				95576CD919471F25008D5757 /* PostTableViewCell.m */,
 				6622AFFA19467A3000D6D3BD /* Images.xcassets */,
@@ -304,6 +309,7 @@
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
+				66C2957719478ACD009CEE22 /* Photo.m in Sources */,
 				95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

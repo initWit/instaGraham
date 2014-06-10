@@ -8,12 +8,17 @@
 
 #import "HomeViewController.h"
 #import <Parse/Parse.h>
+#import "Photo.h"
+// #import "InstaGrahamModelManager.h"
 
 
-@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate>
+@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong,nonatomic) PFLogInViewController *logInViewController;
 @property (strong,nonatomic) PFSignUpViewController *signUpViewController;
+@property (strong, nonatomic) IBOutlet UITableView *photoStreamTableView;
+//@property InstaGrahamModelManager *modelManager;
+@property NSArray *photoObjectsArray;
 
 @end
 
@@ -23,7 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+
+    self.photoObjectsArray = [[NSArray alloc] init];
+
+    // self.modelManager = [InstaGrahamModelManager alloc] init];
+    // [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollings:YES];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -40,6 +51,7 @@
 }
 
 
+#pragma mark - PFLoginViewController Login / Signup delegate methods
 
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password
 {
@@ -66,9 +78,6 @@
 }
 
 
-
-
-
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
 {
     return YES;
@@ -91,6 +100,37 @@
 {
 
 }
+
+#pragma mark - TableView Delegate Methods
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.photoObjectsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+
+//    cell.textLabel.text = currentPhotoObject.username;
+//    cell.imageView.image = currentPhotoObject.image;
+
+    return cell;
+}
+
+
+#pragma mark - InstaGrahamModelManager delegate method
+
+// Completion Block
+//- (void)getPhotoSetOnUser:(PFUser *)username includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion;
+
+// Delegate Method
+//- (void) modelManager (InstaGrahamModelManager *)modelManager didPullPhotoSets:(NSArray *)photoSet
+//{
+//    // self.photoObjectsArray = photoSet;
+//}
 
 
 @end

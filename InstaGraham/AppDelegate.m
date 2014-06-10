@@ -8,14 +8,23 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Photo.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+    [Photo registerSubclass];
+
+// ROBERT'S PARSE ACCOUNT KEYS
     [Parse setApplicationId:@"SJRRG39nyKcziy6A6oXb7puOtbWWDZfn5msM8JjN"
                   clientKey:@"cynLrCjpyPkBi8sUxH3UuqnwiaZyOziz6frGgO4f"];
+
+// INSTACLONE PARSE KEYS
+//    [Parse setApplicationId:@"iXbFVoUSFxuo7CL3lU9v4X1h70oPQ0o51g07X6y1"
+//                  clientKey:@"gtp2kNwZYjvIuSJbjX0m9idYqE95csUOim1C45Q8"];
+
     return YES;
 }
 							
