@@ -22,4 +22,7 @@
 + (PFQuery *)query;
 + (void)registerSubclass;
 
+
+
+
 @end

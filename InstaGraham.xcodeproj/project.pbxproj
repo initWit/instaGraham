@@ -34,6 +34,11 @@
 		6622B0841947721200D6D3BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
 		6622B086194772AD00D6D3BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
 		66C2957719478ACD009CEE22 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C2957619478ACD009CEE22 /* Photo.m */; };
+		66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FD61947C6D20088C821 /* heartIcon.jpeg */; };
+		66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F12FD91947CE8F0088C821 /* CommentViewController.m */; };
+		66F12FDC1947D3B50088C821 /* 1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FDB1947D3B50088C821 /* 1st.png */; };
+		66F12FE21947EB8A0088C821 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FE11947EB8A0088C821 /* cameraIcon.png */; };
+		66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */; };
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 		959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
 		959DF1901947CE9900580948 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18F1947CE9900580948 /* Comment.m */; };
@@ -83,6 +88,13 @@
 		6622B085194772AD00D6D3BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		66C2957519478ACD009CEE22 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		66C2957619478ACD009CEE22 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		66F12FD61947C6D20088C821 /* heartIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heartIcon.jpeg; sourceTree = "<group>"; };
+		66F12FD81947CE8F0088C821 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		66F12FD91947CE8F0088C821 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		66F12FDB1947D3B50088C821 /* 1st.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1st.png; sourceTree = "<group>"; };
+		66F12FE11947EB8A0088C821 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		66F12FE31947EC600088C821 /* PhotoCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCaptureViewController.h; sourceTree = "<group>"; };
+		66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCaptureViewController.m; sourceTree = "<group>"; };
 		95576CD819471F25008D5757 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaGrahamModelManager.h; sourceTree = "<group>"; };
@@ -175,6 +187,10 @@
 				6622AFF119467A3000D6D3BD /* AppDelegate.h */,
 				6622AFF219467A3000D6D3BD /* AppDelegate.m */,
 				6622AFF419467A3000D6D3BD /* Main.storyboard */,
+				66F12FE31947EC600088C821 /* PhotoCaptureViewController.h */,
+				66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */,
+				66F12FD81947CE8F0088C821 /* CommentViewController.h */,
+				66F12FD91947CE8F0088C821 /* CommentViewController.m */,
 				6622AFF719467A3000D6D3BD /* HomeViewController.h */,
 				6622AFF819467A3000D6D3BD /* HomeViewController.m */,
 				66C2957519478ACD009CEE22 /* Photo.h */,
@@ -194,6 +210,9 @@
 		6622AFE919467A3000D6D3BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66F12FE11947EB8A0088C821 /* cameraIcon.png */,
+				66F12FDB1947D3B50088C821 /* 1st.png */,
+				66F12FD61947C6D20088C821 /* heartIcon.jpeg */,
 				6622AFEA19467A3000D6D3BD /* InstaGraham-Info.plist */,
 				6622AFEB19467A3000D6D3BD /* InfoPlist.strings */,
 				6622AFEE19467A3000D6D3BD /* main.m */,
@@ -298,6 +317,9 @@
 				6622AFFB19467A3000D6D3BD /* Images.xcassets in Resources */,
 				6622AFED19467A3000D6D3BD /* InfoPlist.strings in Resources */,
 				6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */,
+				66F12FE21947EB8A0088C821 /* cameraIcon.png in Resources */,
+				66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */,
+				66F12FDC1947D3B50088C821 /* 1st.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +341,9 @@
 				959DF1901947CE9900580948 /* Comment.m in Sources */,
 				959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */,
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
+				66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
+				66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
 				66C2957719478ACD009CEE22 /* Photo.m in Sources */,
 				95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */,
