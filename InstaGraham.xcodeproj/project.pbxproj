@@ -42,6 +42,8 @@
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 		959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
 		959DF1901947CE9900580948 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18F1947CE9900580948 /* Comment.m */; };
+		95D73DE61948D66E00920A89 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01719467BB600D6D3BD /* Parse.framework */; };
+		95D73DE71948D69200920A89 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,7 @@
 			files = (
 				6622B00219467A3000D6D3BD /* XCTest.framework in Frameworks */,
 				6622B00419467A3000D6D3BD /* UIKit.framework in Frameworks */,
+				95D73DE61948D66E00920A89 /* Parse.framework in Frameworks */,
 				6622B00319467A3000D6D3BD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,11 +287,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				TargetAttributes = {
-					6622AFFF19467A3000D6D3BD = {
-						TestTargetID = 6622AFDE19467A2F00D6D3BD;
-					};
-				};
 			};
 			buildConfigurationList = 6622AFDA19467A2F00D6D3BD /* Build configuration list for PBXProject "InstaGraham" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -355,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6622B00E19467A3000D6D3BD /* InstaGrahamTests.m in Sources */,
+				95D73DE71948D69200920A89 /* InstaGrahamModelManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,11 +502,11 @@
 		6622B01519467A3000D6D3BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaGraham.app/InstaGraham";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
@@ -517,7 +516,6 @@
 				);
 				INFOPLIST_FILE = "InstaGrahamTests/InstaGrahamTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -525,17 +523,16 @@
 		6622B01619467A3000D6D3BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaGraham.app/InstaGraham";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "InstaGraham/InstaGraham-Prefix.pch";
 				INFOPLIST_FILE = "InstaGrahamTests/InstaGrahamTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

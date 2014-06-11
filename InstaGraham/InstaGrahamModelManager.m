@@ -9,6 +9,8 @@
 #import "InstaGrahamModelManager.h"
 #import "Photo.h"
 #import "Comment.h"
+#import "PhotoWrapper.h"
+
 
 @interface InstaGrahamModelManager ()
 
@@ -58,9 +60,32 @@
     if (completion)
     {
         PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo"];
-//        [query whereKey:@"user" equalTo:username];
+//        [query whereKey:@"user" equalTo:user];
         [photosQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            completion(objects);
+            NSMutableArray *photoWrappers = [[NSMutableArray alloc] init];
+            NSInteger numberOfPhotos = objects.count;
+            for (Photo *curPhoto in objects)
+            {
+                PFRelation *commentsRelation = [curPhoto relationForKey:@"comments"];
+                PFQuery *commentsQuery = [commentsRelation query];
+                PhotoWrapper *curPhotoWrapper = [[PhotoWrapper alloc] initWithParsePhotoObject:curPhoto];
+                [commentsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    curPhotoWrapper.comments = objects;
+//                    NSLog(@"photo: %@ - comments: %@", curPhoto, objects);
+                    PFRelation *likersRelation = [curPhoto relationForKey:@"likers"];
+                    PFQuery *likersQuery = [likersRelation query];
+
+//                    [likersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//                        curPhotoWrapper.likers = objects;
+                        [photoWrappers addObject:curPhotoWrapper];
+                        if (photoWrappers.count == numberOfPhotos)
+                        {
+                            NSArray *immutablePhotoWrappersArray = [NSArray arrayWithArray:photoWrappers];
+                            completion(immutablePhotoWrappersArray);
+                        }
+//                    }];
+                }];
+            }
         }];
     }
 }
