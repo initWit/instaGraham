@@ -36,6 +36,7 @@
 		66C2957719478ACD009CEE22 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C2957619478ACD009CEE22 /* Photo.m */; };
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 		959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
+		959DF1901947CE9900580948 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18F1947CE9900580948 /* Comment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaGrahamModelManager.h; sourceTree = "<group>"; };
 		959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaGrahamModelManager.m; sourceTree = "<group>"; };
+		959DF18E1947CE9900580948 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		959DF18F1947CE9900580948 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 				6622AFF819467A3000D6D3BD /* HomeViewController.m */,
 				66C2957519478ACD009CEE22 /* Photo.h */,
 				66C2957619478ACD009CEE22 /* Photo.m */,
+				959DF18E1947CE9900580948 /* Comment.h */,
+				959DF18F1947CE9900580948 /* Comment.m */,
 				95576CD819471F25008D5757 /* PostTableViewCell.h */,
 				95576CD919471F25008D5757 /* PostTableViewCell.m */,
 				6622AFFA19467A3000D6D3BD /* Images.xcassets */,
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959DF1901947CE9900580948 /* Comment.m in Sources */,
 				959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */,
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,

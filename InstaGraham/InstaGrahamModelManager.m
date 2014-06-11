@@ -7,7 +7,8 @@
 //
 
 #import "InstaGrahamModelManager.h"
-
+#import "Photo.h"
+#import "Comment.h"
 
 @interface InstaGrahamModelManager ()
 
@@ -31,13 +32,16 @@
 }
 
 
+
+
+
 - (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion
 {
     if (completion)
     {
-        PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
+        PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo"];
 //        [query whereKey:@"user" equalTo:username];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [photosQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             completion(objects);
         }];
     }
@@ -46,13 +50,24 @@
 
 - (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings
 {
-//    [self.delegate modelManager:self didPullPhotoSet:@[@"this",@"is",@"a",@"test"]];
-
     PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
     [query whereKey:@"user" equalTo:user];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         [self.delegate modelManager:self didPullPhotoSet:objects];
     }];
 }
+
+
+- (void)getFollowSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followSet))completion
+{
+
+}
+
+
+- (void)getFollowerSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followerSet))completion
+{
+
+}
+
 
 @end
