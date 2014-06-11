@@ -13,4 +13,7 @@
 +(id)parseClassName;
 @property PFFile *image;
 
+
+
+
 @end

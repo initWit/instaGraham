@@ -12,6 +12,7 @@
 
 @dynamic image;
 
+
 +(id)parseClassName
 {
     return @"Photo";

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Capture-->
+        <!--Photo Capture View Controller-->
         <scene sceneID="k9r-zS-B6M">
             <objects>
-                <viewController id="ocx-my-0jE" sceneMemberID="viewController">
+                <viewController id="ocx-my-0jE" customClass="PhotoCaptureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A0T-XJ-nQu"/>
                         <viewControllerLayoutGuide type="bottom" id="zi1-Ee-D1V"/>
@@ -15,14 +15,53 @@
                     <view key="view" contentMode="scaleToFill" id="qbx-wr-u5d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJ6-Lg-JFZ">
+                                <rect key="frame" x="20" y="82" width="117" height="117"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." translatesAutoresizingMaskIntoConstraints="NO" id="qbA-4y-MlJ">
+                                <rect key="frame" x="145" y="82" width="165" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ocx-my-0jE" id="s2A-nU-cZQ"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-YR-tgp">
+                                <rect key="frame" x="135" y="227" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SHARE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonTapped:" destination="ocx-my-0jE" eventType="touchUpInside" id="xwR-6A-gEH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TRs-VG-wIO" appends="YES" id="pa6-dI-d5U"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Capture" id="DHr-OK-wVX"/>
                     <navigationItem key="navigationItem" id="Mb3-Sy-LPt"/>
+                    <connections>
+                        <outlet property="captionTextView" destination="qbA-4y-MlJ" id="BQ1-Hk-rp3"/>
+                        <outlet property="photoPreviewImageView" destination="QJ6-Lg-JFZ" id="qbP-Gr-vkK"/>
+                        <outlet property="shareButton" destination="Adu-YR-tgp" id="73o-sK-hCG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IH7-uc-eRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TRs-VG-wIO">
+                    <connections>
+                        <action selector="tappedBackgroundView:" destination="ocx-my-0jE" id="YRx-q9-te1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="443" y="545"/>
+            <point key="canvasLocation" x="969" y="545"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mlN-hA-ZUy">
@@ -43,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="969" y="1277"/>
         </scene>
-        <!--Home View Controller - InstaGraham-->
+        <!--Home View Controller - InstaFibonacci-->
         <scene sceneID="2zh-1X-RNn">
             <objects>
                 <viewController id="h6U-Gz-Fb1" customClass="HomeViewController" sceneMemberID="viewController">
@@ -122,7 +161,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="InstaGraham" id="kJl-W7-EXv"/>
+                    <navigationItem key="navigationItem" title="InstaFibonacci" id="kJl-W7-EXv"/>
                     <connections>
                         <outlet property="photoStreamTableView" destination="z2e-cD-Mv8" id="TVd-mA-2DG"/>
                     </connections>
@@ -197,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whn-Kl-4Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000" y="277"/>
+            <point key="canvasLocation" x="2526" y="277"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="n3E-2l-LiP">
@@ -215,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9H8-b6-OGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000" y="985"/>
+            <point key="canvasLocation" x="2526" y="985"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h4n-8I-PBn">
@@ -230,7 +269,7 @@
                     <connections>
                         <segue destination="OwG-g4-Zih" kind="relationship" relationship="viewControllers" id="oIP-QQ-I0K"/>
                         <segue destination="eFl-Xf-L8Y" kind="relationship" relationship="viewControllers" id="YWc-bI-ePY"/>
-                        <segue destination="ocx-my-0jE" kind="relationship" relationship="viewControllers" id="K43-cn-kH4"/>
+                        <segue destination="9eW-8d-4B7" kind="relationship" relationship="viewControllers" id="K43-cn-kH4"/>
                         <segue destination="0vc-0y-C2t" kind="relationship" relationship="viewControllers" id="Yxv-Up-jeZ"/>
                     </connections>
                 </tabBarController>
@@ -314,8 +353,28 @@
             </objects>
             <point key="canvasLocation" x="443" y="1277"/>
         </scene>
+        <!--Navigation Controller - Capture-->
+        <scene sceneID="r73-7R-0m9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9eW-8d-4B7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Capture" image="cameraIcon.png" id="DHr-OK-wVX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bcB-XC-wqJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ocx-my-0jE" kind="relationship" relationship="rootViewController" id="Yij-qC-Fn7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIh-Dz-B8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="545"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="cameraIcon.png" width="40" height="40"/>
         <image name="heartIcon.jpeg" width="64" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

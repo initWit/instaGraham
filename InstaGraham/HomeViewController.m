@@ -140,13 +140,24 @@
     return cell;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @"SECTION HEADER";
-}
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return @"SECTION HEADER";
+//}
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+
+    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:section];
+    NSDate *createdAt = currentPhotoObject.createdAt;
+    NSLog(@"createdAt: %@",createdAt);
+
+    NSDate* date1 = [NSDate date];
+    NSDate* date2 = createdAt;
+    NSTimeInterval distanceBetweenDates = [date1 timeIntervalSinceDate:date2];
+    double secondsInAnHour = 3600;
+    NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour;
+
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
 
     UIImage *profileImage = [UIImage imageNamed:@"1st.png"];
@@ -156,12 +167,12 @@
     UILabel *userNamelabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, tableView.frame.size.width, 40)];
     [userNamelabel setFont:[UIFont boldSystemFontOfSize:12]];
     userNamelabel.textColor = [UIColor blueColor];
-    NSString *userNamestring = @"SECTION HEADER";
+    NSString *userNamestring = @"photo owner name";
 
     UILabel *timeStampLabel = [[UILabel alloc] initWithFrame:CGRectMake(290, 5, tableView.frame.size.width, 40)];
     [timeStampLabel setFont:[UIFont systemFontOfSize:12]];
     timeStampLabel.textColor = [UIColor grayColor];
-    NSString *timeStampString = @"3h";
+    NSString *timeStampString = [NSString stringWithFormat:@"%ih",hoursBetweenDates];
 
     [timeStampLabel setText:timeStampString];
     [userNamelabel setText:userNamestring];
