@@ -19,7 +19,7 @@
 @synthesize comments = _comments;
 
 
-+(id)parseClassName
++(NSString *)parseClassName
 {
     return @"Photo";
 }
@@ -33,5 +33,29 @@
     }
     return _comments;
 }
+
++ (instancetype)object
+{
+    return nil;
+}
+
+
++ (instancetype)objectWithoutDataWithObjectId:(NSString *)objectId
+{
+    return nil;
+}
+
+
++ (PFQuery *)query;
+{
+    return nil;
+}
+
+
++ (void)registerSubclass;
+{
+
+}
+
 
 @end

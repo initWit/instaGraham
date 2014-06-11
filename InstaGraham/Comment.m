@@ -10,10 +10,35 @@
 
 @implementation Comment
 
-+ (id)parseClassName
+@synthesize commentText = _commentText;
+
++ (NSString *)parseClassName
 {
     return @"Comment";
 }
 
+
++ (instancetype)object
+{
+    return nil;
+}
+
+
++ (instancetype)objectWithoutDataWithObjectId:(NSString *)objectId
+{
+    return nil;
+}
+
+
++ (PFQuery *)query;
+{
+    return nil;
+}
+
+
++ (void)registerSubclass;
+{
+
+}
 
 @end

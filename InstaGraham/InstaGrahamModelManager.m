@@ -19,20 +19,33 @@
 
 @implementation InstaGrahamModelManager
 
-@synthesize delegate = _delegate;
-
--(id)init
-{
-    self = [super init];
-    if (self)
-    {
-        
-    }
-    return self;
-}
-
-
-
+//+ (id)sharedManager
+//{
+//    static InstaGrahamModelManager *sharedManager;
+//    if (!sharedManager)
+//    {
+//        sharedManager = [[self alloc] initPrivate];
+//    }
+//    return sharedManager;
+//}
+//
+//- (id)initPrivate
+//{
+//    self = [super init];
+//    if (self)
+//    {
+//        // placeholder for any necessary property instantiations and initialization code
+//    }
+//    return self;
+//}
+//
+//
+//- (id)init
+//{
+//
+//    [NSException raise:@"InstaGrahamModelManager is a Singleton."  format:@"Use [InstaGrahamModelManager sharedManager] to obtain a reference."];
+//    return nil;
+//}
 
 
 - (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion
@@ -48,16 +61,6 @@
 }
 
 
-- (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings
-{
-    PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-    [query whereKey:@"user" equalTo:user];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [self.delegate modelManager:self didPullPhotoSet:objects];
-    }];
-}
-
-
 - (void)getFollowSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followSet))completion
 {
 
@@ -68,6 +71,50 @@
 {
 
 }
+
+
+- (void)editInfoForUser:(PFUser *)user;
+{
+
+}
+
+
+- (void)removePhoto:(Photo *)photo;
+{
+
+}
+
+
+- (void)postNewComment:(NSString *)comment onPhoto:(Photo *)photo byUser:(PFUser *)user
+{
+
+}
+
+
+- (void)postNewLikeOnPhoto:(Photo *)photo byUser:(PFUser *)user
+{
+
+}
+
+
+- (void)removeLikeOnPhoto:(Photo *)photo byUser:(PFUser *)user
+{
+
+}
+
+
+- (void)addNewFollowerToUser:(PFUser *)followedUser fromUser:(PFUser *)followingUser
+{
+
+}
+
+
+- (void)removeNewFollowerToUser:(PFUser *)formerFollowedUser fromUser:(PFUser *)formerFollowingUser
+{
+
+}
+
+
 
 
 @end

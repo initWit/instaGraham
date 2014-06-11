@@ -17,6 +17,9 @@
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSString *caption;
 
-+(id)parseClassName;
++ (instancetype)objectWithoutDataWithObjectId:(NSString *)objectId;
++ (NSString *)parseClassName;
++ (PFQuery *)query;
++ (void)registerSubclass;
 
 @end
