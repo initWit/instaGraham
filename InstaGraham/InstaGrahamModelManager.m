@@ -22,9 +22,12 @@
 //+ (id)sharedManager
 //{
 //    static InstaGrahamModelManager *sharedManager;
+//    static dispatch_once_t *onceToken;
 //    if (!sharedManager)
 //    {
-//        sharedManager = [[self alloc] initPrivate];
+//        dispatch_once(&onceToken, ^{
+//            sharedManager = [[self alloc] initPrivate];
+//        });
 //    }
 //    return sharedManager;
 //}
@@ -48,6 +51,8 @@
 //}
 
 
+#pragma mark - PhotoSet Related Methods
+
 - (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet))completion
 {
     if (completion)
@@ -60,6 +65,26 @@
     }
 }
 
+
+- (void)getPhotoSetOfLikesOfUser:(PFUser *)user completion:(void (^)(NSArray *photoSet, NSError *error))completion
+{
+
+}
+
+
+- (void)postNewPhoto:(Photo *)photo byUser:(PFUser *)user;
+{
+
+}
+
+
+- (void)removePhoto:(Photo *)photo;
+{
+
+}
+
+
+#pragma mark - User & Following Related Methods
 
 - (void)getFollowSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followSet))completion
 {
@@ -79,11 +104,7 @@
 }
 
 
-- (void)removePhoto:(Photo *)photo;
-{
-
-}
-
+#pragma mark - Comment and Like Related Methods
 
 - (void)postNewComment:(NSString *)comment onPhoto:(Photo *)photo byUser:(PFUser *)user
 {
@@ -114,6 +135,24 @@
 
 }
 
+//- (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet, NSError *error))completion
+//{
+//
+//}
+//
+//
+//- (void)getFollowSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followSet, NSError *error))completion;
+//{
+//
+//}
+//
+//
+//- (void)getFollowerSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followerSet, NSError *error))completion;
+//{
+//
+//}
+//
+//
 
 
 
