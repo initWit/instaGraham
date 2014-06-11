@@ -7,43 +7,52 @@
 //
 
 #import "CommentViewController.h"
+#import "InstaGrahamModelManager.h"
+#import <Parse/Parse.h>
 
-@interface CommentViewController ()
+@interface CommentViewController () <UITextViewDelegate>
+@property (strong, nonatomic) IBOutlet UITextView *commentTextView;
+@property InstaGrahamModelManager *modelManager;
 
 @end
 
 @implementation CommentViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.commentTextView becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - TextView delegate methods
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.commentTextView.text = @"";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)textViewDidEndEditing:(UITextView *)textView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (self.commentTextView.text.length == 0) {
+        self.commentTextView.text = @"Add a caption...";
+    }
 }
-*/
+
+
+#pragma mark - helper methods
+
+- (IBAction)sendButtonTapped:(id)sender
+{
+    [self.commentTextView resignFirstResponder];
+    [self.modelManager postNewComment:self.commentTextView.text onPhoto:self.photoObjectToBeCommentedOn byUser:[PFUser currentUser]];
+
+}
+
+- (IBAction)tappedBackgroundView:(id)sender
+{
+    [self.commentTextView resignFirstResponder];
+}
+
+
 
 @end

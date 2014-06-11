@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface CommentViewController : UIViewController
+
+@property Photo *photoObjectToBeCommentedOn;
 
 @end

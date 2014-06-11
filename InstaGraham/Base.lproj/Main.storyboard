@@ -82,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="969" y="1277"/>
         </scene>
-        <!--Home View Controller - InstaFibonacci-->
+        <!--Home View Controller - Exchange-agram-->
         <scene sceneID="2zh-1X-RNn">
             <objects>
                 <viewController id="h6U-Gz-Fb1" customClass="HomeViewController" sceneMemberID="viewController">
@@ -129,11 +129,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A17-O5-Kyy">
-                                                    <rect key="frame" x="34" y="404" width="30" height="30"/>
+                                                    <rect key="frame" x="34" y="409" width="54" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Like">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="h6U-Gz-Fb1" eventType="touchUpInside" id="okg-9o-OSK"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3H-VS-Lmu">
                                                     <rect key="frame" x="111" y="404" width="68" height="30"/>
@@ -142,14 +145,16 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="bA2-XH-nFs" kind="push" id="PIJ-MG-10W"/>
+                                                        <segue destination="bA2-XH-nFs" kind="push" identifier="CommentSegue" id="PIJ-MG-10W"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="commentButton" destination="H3H-VS-Lmu" id="gRR-jO-wl1"/>
                                             <outlet property="imageViewCustom" destination="JG5-du-UpD" id="SLj-iU-LjR"/>
+                                            <outlet property="likeButton" destination="A17-O5-Kyy" id="hoJ-bR-FIO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -161,7 +166,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="InstaFibonacci" id="kJl-W7-EXv"/>
+                    <navigationItem key="navigationItem" title="Exchange-agram" id="kJl-W7-EXv"/>
                     <connections>
                         <outlet property="photoStreamTableView" destination="z2e-cD-Mv8" id="TVd-mA-2DG"/>
                     </connections>
@@ -210,11 +215,17 @@
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonTapped:" destination="bA2-XH-nFs" eventType="touchUpInside" id="2AB-kM-pgK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="COMMENTS" id="G9C-ZH-w8K"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="X71-b8-gsa" id="mYO-zN-geW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOb-hH-5Gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

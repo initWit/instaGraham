@@ -10,4 +10,6 @@
 
 @interface PostTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewCustom;
+@property (strong, nonatomic) IBOutlet UIButton *likeButton;
+@property (strong, nonatomic) IBOutlet UIButton *commentButton;
 @end

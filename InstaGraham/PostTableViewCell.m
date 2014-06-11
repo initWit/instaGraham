@@ -9,7 +9,6 @@
 #import "PostTableViewCell.h"
 
 @interface PostTableViewCell ()
-
 @end
 
 @implementation PostTableViewCell
@@ -18,10 +17,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }
+
+
 
 
 

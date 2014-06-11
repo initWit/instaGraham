@@ -7,12 +7,16 @@
 //
 
 #import "PhotoCaptureViewController.h"
+#import "InstaGrahamModelManager.h"
+#import "Photo.h"
 
 @interface PhotoCaptureViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextViewDelegate>
 @property UIImagePickerController *imagePicker;
 @property (strong, nonatomic) IBOutlet UIImageView *photoPreviewImageView;
 @property (strong, nonatomic) IBOutlet UITextView *captionTextView;
 @property (strong, nonatomic) IBOutlet UIButton *shareButton;
+@property InstaGrahamModelManager *modelManager;
+@property Photo *photoObjectToPost;
 @end
 
 @implementation PhotoCaptureViewController
@@ -26,6 +30,9 @@
 {
     [super viewWillAppear:animated];
     [self showImagePicker];
+    if (!self.photoPreviewImageView.image) {
+        [self.shareButton setEnabled:NO];
+    }
 }
 
 
@@ -34,10 +41,12 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.photoPreviewImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.photoObjectToPost.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera){
         UIImageWriteToSavedPhotosAlbum(self.photoPreviewImageView.image, nil, nil, nil);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.shareButton setEnabled:YES];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -87,6 +96,8 @@
 - (IBAction)shareButtonTapped:(id)sender
 {
     [self.captionTextView resignFirstResponder];
+    [self.modelManager postNewPhoto:self.photoObjectToPost byUser:[PFUser currentUser]];
+
 }
 
 - (IBAction)tappedBackgroundView:(id)sender
