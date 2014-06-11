@@ -10,9 +10,10 @@
 #import <Parse/Parse.h>
 #import "Photo.h"
 #import "InstaGrahamModelManager.h"
+#import "PostTableViewCell.h"
 
 
-@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, InstaGrahamModelManagerDelegate>
+@interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong,nonatomic) PFLogInViewController *logInViewController;
 @property (strong,nonatomic) PFSignUpViewController *signUpViewController;
@@ -51,7 +52,6 @@
 
     [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:YES completion:^(NSArray *photoSet) {
         self.photoObjectsArray = photoSet;
-        NSLog(@"self.photoObjectsArray is %@",self.photoObjectsArray);
         [self.photoStreamTableView reloadData];
     }];
 }
@@ -109,18 +109,21 @@
 
 #pragma mark - TableView Delegate Methods
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.photoObjectsArray.count;
-    NSLog(@"self.photoObjectsArray.count is %i",self.photoObjectsArray.count);
+}
 
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.row];
+    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.section];
     PFFile *imageFile = [currentPhotoObject objectForKey:@"image"];
 
     dispatch_queue_t bkgndQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -128,29 +131,53 @@
         NSData *dataOfFile = [imageFile getData];
         if (dataOfFile) {
             dispatch_async(dispatch_get_main_queue(),^{
-                cell.imageView.image = [UIImage imageWithData:dataOfFile];
+                cell.imageViewCustom.image = [UIImage imageWithData:dataOfFile];
                 [cell setNeedsLayout];
             });
         }
     });
 
-//    NSString *modelTestString = [self.photoObjectsArray objectAtIndex:indexPath.row];
-//    NSLog(@"modelTestString is %@",modelTestString);
-//    cell.textLabel.text = modelTestString;
-
-
     return cell;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @"SECTION HEADER";
+}
 
-#pragma mark - InstaGrahamModelManager delegate method
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
 
-// Delegate Method
-//- (void)modelManager:(InstaGrahamModelManager *)modelManager didPullPhotoSet:(NSArray *)photoSet
-//{
-//    self.photoObjectsArray = photoSet;
-//    NSLog(@"self.photoObjectsArray is %@",self.photoObjectsArray);
-//}
+    UIImage *profileImage = [UIImage imageNamed:@"1st.png"];
+    UIImageView *profileImageView = [[UIImageView alloc] initWithFrame:CGRectMake(2, 5, 30, 30)];
+    profileImageView.image = profileImage;
+
+    UILabel *userNamelabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, tableView.frame.size.width, 40)];
+    [userNamelabel setFont:[UIFont boldSystemFontOfSize:12]];
+    userNamelabel.textColor = [UIColor blueColor];
+    NSString *userNamestring = @"SECTION HEADER";
+
+    UILabel *timeStampLabel = [[UILabel alloc] initWithFrame:CGRectMake(290, 5, tableView.frame.size.width, 40)];
+    [timeStampLabel setFont:[UIFont systemFontOfSize:12]];
+    timeStampLabel.textColor = [UIColor grayColor];
+    NSString *timeStampString = @"3h";
+
+    [timeStampLabel setText:timeStampString];
+    [userNamelabel setText:userNamestring];
+
+    [view addSubview:userNamelabel];
+    [view addSubview:timeStampLabel];
+    [view addSubview:profileImageView];
+
+    [view setBackgroundColor:[UIColor whiteColor]];
+
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 50;
+}
 
 
 @end

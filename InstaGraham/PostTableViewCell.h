@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PostTableViewCell : UITableViewCell
-
+@property (strong, nonatomic) IBOutlet UIImageView *imageViewCustom;
 @end
