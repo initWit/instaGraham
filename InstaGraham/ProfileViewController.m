@@ -36,12 +36,17 @@
     self.title = self.currentUserForProfile.username;
 
     PFFile *imageFile = [self.currentUserForProfile objectForKey:@"profilePic"];
+    NSLog(@"imageFile %@", imageFile);
 
-    NSLog(@"imageFile is %@", imageFile);
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        UIImage *profileImage = [[UIImage alloc]init];
+        profileImage = [UIImage imageWithData:data];
 
-
-
-
+        NSLog(@"profileImage %@", profileImage);
+        if (profileImage) {
+            self.profileImageView.image = profileImage;
+        }
+    }];
 
 }
 
