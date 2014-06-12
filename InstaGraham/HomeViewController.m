@@ -23,6 +23,7 @@
 @property InstaGrahamModelManager *modelManager;
 @property NSArray *photoObjectsArray;
 @property BOOL isLiked;
+@property (strong, nonatomic) IBOutlet UILabel *captionLabel;
 
 @end
 
@@ -50,14 +51,10 @@
         [self presentViewController:self.logInViewController animated:YES completion:nil];
     }
 
-    [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:YES completion:^(NSArray *photoSet) {
+    [self.modelManager getPhotoSetOnUser:[PFUser currentUser] includingFollowings:NO completion:^(NSArray *photoSet) {
         self.photoObjectsArray = photoSet;
         [self.photoStreamTableView reloadData];
     }];
-
-//    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
-//    [titleBarAttributes setValue:[UIFont fontWithName:@"JBCursive" size:16] forKey:NSFontAttributeName];
-//    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
 }
 
 
@@ -145,7 +142,7 @@
         }
     });
 
-//    NSLog(@"%@", currentPhotoWrapperObject.likers);
+    cell.captionLabel.text = currentParsePhotoObject.caption;
 
     NSString *currentUserName = [PFUser currentUser].username;
     BOOL currentUserLikeThePhoto = NO;

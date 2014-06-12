@@ -24,6 +24,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.photoObjectToPost = [Photo objectWithClassName:@"Photo"];
+    self.modelManager = [[InstaGrahamModelManager alloc]init];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -41,7 +43,12 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     self.photoPreviewImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.photoObjectToPost.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(self.photoPreviewImageView.image, 0.0);
+    PFFile *capturedImage = [PFFile fileWithData:imageData];
+
+    self.photoObjectToPost.image = capturedImage;
+
+
     if (self.imagePicker.sourceType == UIImagePickerControllerSourceTypeCamera){
         UIImageWriteToSavedPhotosAlbum(self.photoPreviewImageView.image, nil, nil, nil);
     }
@@ -92,12 +99,12 @@
     }
 }
 
-
 #pragma mark - helper methods
 
 - (IBAction)shareButtonTapped:(id)sender
 {
     [self.captionTextView resignFirstResponder];
+    self.photoObjectToPost.caption = self.captionTextView.text;
     [self.modelManager postNewPhoto:self.photoObjectToPost byUser:[PFUser currentUser]];
 
 }
