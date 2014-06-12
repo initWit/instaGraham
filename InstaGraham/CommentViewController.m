@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.commentTextView.delegate = self;
     [self.commentTextView becomeFirstResponder];
 }
 
