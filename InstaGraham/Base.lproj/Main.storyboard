@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="969" y="545"/>
         </scene>
-        <!--View Controller - Profile-->
+        <!--Profile View Controller - Profile-->
         <scene sceneID="mlN-hA-ZUy">
             <objects>
-                <viewController id="UUb-WY-k0B" sceneMemberID="viewController">
+                <viewController id="UUb-WY-k0B" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p66-mt-f0v"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3T-JY-ttU"/>
@@ -170,6 +170,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="gNU-uT-3d1"/>
+                    <connections>
+                        <outlet property="followButton" destination="E7d-Tf-09e" id="ska-y1-59n"/>
+                        <outlet property="numberOfFollowersLabel" destination="21H-IC-7Lv" id="ncG-7s-a6n"/>
+                        <outlet property="numberOfFollowingLabel" destination="vFU-ic-Sdi" id="ezR-5K-lEy"/>
+                        <outlet property="numberOfPhotosLabel" destination="N0m-l7-RKl" id="ZrO-F0-MY7"/>
+                        <outlet property="profileImageView" destination="wrg-ko-nl6" id="52D-Za-6Fx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vmR-2f-7CB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,6 +252,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
+                                            <outlet property="captionLabel" destination="QQx-uk-WWW" id="URN-6i-PWf"/>
                                             <outlet property="commentButton" destination="H3H-VS-Lmu" id="gRR-jO-wl1"/>
                                             <outlet property="imageViewCustom" destination="JG5-du-UpD" id="SLj-iU-LjR"/>
                                             <outlet property="likeButton" destination="A17-O5-Kyy" id="hoJ-bR-FIO"/>
@@ -391,10 +399,10 @@
             </objects>
             <point key="canvasLocation" x="-94" y="357"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Users Hash View Controller-->
         <scene sceneID="H2F-OS-9nK">
             <objects>
-                <viewController id="PdM-qv-7iD" sceneMemberID="viewController">
+                <viewController id="PdM-qv-7iD" customClass="SearchUsersHashViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="03a-OY-ofo"/>
                         <viewControllerLayoutGuide type="bottom" id="4kU-6P-dgb"/>

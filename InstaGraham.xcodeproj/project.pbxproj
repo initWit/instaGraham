@@ -33,8 +33,9 @@
 		6622B02A19467D5000D6D3BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02919467D5000D6D3BD /* SystemConfiguration.framework */; };
 		6622B0841947721200D6D3BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
 		6622B086194772AD00D6D3BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
+		6642BE091949FCEF00C0C878 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6642BE081949FCEF00C0C878 /* ProfileViewController.m */; };
+		6642BE0C194A006C00C0C878 /* SearchUsersHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6642BE0B194A006B00C0C878 /* SearchUsersHashViewController.m */; };
 		66C2957719478ACD009CEE22 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C2957619478ACD009CEE22 /* Photo.m */; };
-		66CD2EDD1949158000846B68 /* PhotoWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CD2EDC1949158000846B68 /* PhotoWrapper.m */; };
 		66CD2EDF19495D3100846B68 /* homeOutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EDE19495D3100846B68 /* homeOutline.png */; };
 		66CD2EE119495DEC00846B68 /* exploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE019495DEC00846B68 /* exploreIcon.png */; };
 		66CD2EE319495E8100846B68 /* profile1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE219495E8100846B68 /* profile1.png */; };
@@ -108,6 +109,10 @@
 		6622B02919467D5000D6D3BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6622B0831947721200D6D3BD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6622B085194772AD00D6D3BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		6642BE071949FCEF00C0C878 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		6642BE081949FCEF00C0C878 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		6642BE0A194A006B00C0C878 /* SearchUsersHashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersHashViewController.h; sourceTree = "<group>"; };
+		6642BE0B194A006B00C0C878 /* SearchUsersHashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersHashViewController.m; sourceTree = "<group>"; };
 		66C2957519478ACD009CEE22 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		66C2957619478ACD009CEE22 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		66CD2EDB1949158000846B68 /* PhotoWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoWrapper.h; sourceTree = "<group>"; };
@@ -231,6 +236,10 @@
 				6622AFF119467A3000D6D3BD /* AppDelegate.h */,
 				6622AFF219467A3000D6D3BD /* AppDelegate.m */,
 				6622AFF419467A3000D6D3BD /* Main.storyboard */,
+				6642BE0A194A006B00C0C878 /* SearchUsersHashViewController.h */,
+				6642BE0B194A006B00C0C878 /* SearchUsersHashViewController.m */,
+				6642BE071949FCEF00C0C878 /* ProfileViewController.h */,
+				6642BE081949FCEF00C0C878 /* ProfileViewController.m */,
 				66F12FE31947EC600088C821 /* PhotoCaptureViewController.h */,
 				66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */,
 				66F12FD81947CE8F0088C821 /* CommentViewController.h */,
@@ -399,6 +408,8 @@
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
+				6642BE091949FCEF00C0C878 /* ProfileViewController.m in Sources */,
+				6642BE0C194A006C00C0C878 /* SearchUsersHashViewController.m in Sources */,
 				66C2957719478ACD009CEE22 /* Photo.m in Sources */,
 				95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */,
 			);
