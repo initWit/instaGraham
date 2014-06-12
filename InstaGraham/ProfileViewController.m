@@ -7,7 +7,6 @@
 //
 
 #import "ProfileViewController.h"
-#import <Parse/Parse.h>
 
 @interface ProfileViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *followButton;
@@ -27,9 +26,24 @@
 
     [self.followButton setEnabled:NO];
 
-
+    self.currentUserForProfile = [PFUser currentUser];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.title = self.currentUserForProfile.username;
+
+    PFFile *imageFile = [self.currentUserForProfile objectForKey:@"profilePic"];
+
+    NSLog(@"imageFile is %@", imageFile);
+
+
+
+
+
+}
 
 
 @end
