@@ -81,12 +81,14 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     self.captionTextView.text = @"";
+    self.captionTextView.textColor = [UIColor blackColor];
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView
 {
     if (self.captionTextView.text.length == 0) {
         self.captionTextView.text = @"Write a caption...";
+        self.captionTextView.textColor = [UIColor lightGrayColor];
     }
 }
 
@@ -104,6 +106,12 @@
 {
     [self.captionTextView resignFirstResponder];
 }
+
+- (IBAction)imageViewTapped:(id)sender
+{
+    [self showImagePicker];
+}
+
 
 
 @end
