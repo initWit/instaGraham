@@ -34,6 +34,11 @@
 		6622B0841947721200D6D3BD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
 		6622B086194772AD00D6D3BD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
 		66C2957719478ACD009CEE22 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C2957619478ACD009CEE22 /* Photo.m */; };
+		66CD2EDD1949158000846B68 /* PhotoWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CD2EDC1949158000846B68 /* PhotoWrapper.m */; };
+		66CD2EDF19495D3100846B68 /* homeOutline.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EDE19495D3100846B68 /* homeOutline.png */; };
+		66CD2EE119495DEC00846B68 /* exploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE019495DEC00846B68 /* exploreIcon.png */; };
+		66CD2EE319495E8100846B68 /* profile1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE219495E8100846B68 /* profile1.png */; };
+		66CD2EE51949628B00846B68 /* jlo.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE41949628B00846B68 /* jlo.png */; };
 		66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FD61947C6D20088C821 /* heartIcon.jpeg */; };
 		66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F12FD91947CE8F0088C821 /* CommentViewController.m */; };
 		66F12FDC1947D3B50088C821 /* 1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FDB1947D3B50088C821 /* 1st.png */; };
@@ -90,6 +95,12 @@
 		6622B085194772AD00D6D3BD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		66C2957519478ACD009CEE22 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		66C2957619478ACD009CEE22 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		66CD2EDB1949158000846B68 /* PhotoWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoWrapper.h; sourceTree = "<group>"; };
+		66CD2EDC1949158000846B68 /* PhotoWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoWrapper.m; sourceTree = "<group>"; };
+		66CD2EDE19495D3100846B68 /* homeOutline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeOutline.png; sourceTree = "<group>"; };
+		66CD2EE019495DEC00846B68 /* exploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exploreIcon.png; sourceTree = "<group>"; };
+		66CD2EE219495E8100846B68 /* profile1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile1.png; sourceTree = "<group>"; };
+		66CD2EE41949628B00846B68 /* jlo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jlo.png; sourceTree = "<group>"; };
 		66F12FD61947C6D20088C821 /* heartIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heartIcon.jpeg; sourceTree = "<group>"; };
 		66F12FD81947CE8F0088C821 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		66F12FD91947CE8F0088C821 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
@@ -206,6 +217,8 @@
 				6622AFE919467A3000D6D3BD /* Supporting Files */,
 				959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */,
 				959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */,
+				66CD2EDB1949158000846B68 /* PhotoWrapper.h */,
+				66CD2EDC1949158000846B68 /* PhotoWrapper.m */,
 			);
 			path = InstaGraham;
 			sourceTree = "<group>";
@@ -213,6 +226,10 @@
 		6622AFE919467A3000D6D3BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66CD2EE41949628B00846B68 /* jlo.png */,
+				66CD2EE219495E8100846B68 /* profile1.png */,
+				66CD2EE019495DEC00846B68 /* exploreIcon.png */,
+				66CD2EDE19495D3100846B68 /* homeOutline.png */,
 				66F12FE11947EB8A0088C821 /* cameraIcon.png */,
 				66F12FDB1947D3B50088C821 /* 1st.png */,
 				66F12FD61947C6D20088C821 /* heartIcon.jpeg */,
@@ -314,6 +331,10 @@
 			files = (
 				6622AFFB19467A3000D6D3BD /* Images.xcassets in Resources */,
 				6622AFED19467A3000D6D3BD /* InfoPlist.strings in Resources */,
+				66CD2EE119495DEC00846B68 /* exploreIcon.png in Resources */,
+				66CD2EE319495E8100846B68 /* profile1.png in Resources */,
+				66CD2EDF19495D3100846B68 /* homeOutline.png in Resources */,
+				66CD2EE51949628B00846B68 /* jlo.png in Resources */,
 				6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */,
 				66F12FE21947EB8A0088C821 /* cameraIcon.png in Resources */,
 				66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */,
@@ -340,6 +361,7 @@
 				959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */,
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */,
+				66CD2EDD1949158000846B68 /* PhotoWrapper.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,

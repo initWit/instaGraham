@@ -12,7 +12,7 @@
 #import "InstaGrahamModelManager.h"
 #import "PostTableViewCell.h"
 #import "CommentViewController.h"
-
+#import "PhotoWrapper.h"
 
 
 @interface HomeViewController () <PFSignUpViewControllerDelegate,PFLogInViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -122,8 +122,12 @@
 {
     PostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
-    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:indexPath.section];
-    PFFile *imageFile = [currentPhotoObject objectForKey:@"image"];
+    PhotoWrapper *currentPhotoWrapperObject = [self.photoObjectsArray objectAtIndex:indexPath.section];
+
+    Photo *currentParsePhotoObject = [currentPhotoWrapperObject performSelector:@selector(parsePhotoObject)];
+
+    PFFile *imageFile = [currentParsePhotoObject objectForKey:@"image"];
+
 
     dispatch_queue_t bkgndQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(bkgndQueue,^{
@@ -136,22 +140,13 @@
         }
     });
 
-    
-#pragma TODO: check with current user to see if they are in the relation of Likers for PhotoObject
-
-    PFRelation *likeRelationForPhotoObject = [currentPhotoObject relationForKey:@"likers"];
-    PFQuery *query = [likeRelationForPhotoObject query];
-    NSArray *objects = [query findObjects];
-
-//    NSLog(@"objects is: %@", objects);
+//    NSLog(@"%@", currentPhotoWrapperObject.likers);
 
     NSString *currentUserName = [PFUser currentUser].username;
-//    NSLog(@"currentUserName is: %@", currentUserName);
     BOOL currentUserLikeThePhoto = NO;
 
-    for (PFUser *eachUser in objects) {
+    for (PFUser *eachUser in currentPhotoWrapperObject.likers) {
         NSString *eachUserName = eachUser.username;
-//        NSLog(@"eachUserName is: %@", eachUserName);
         if ([eachUserName isEqualToString:currentUserName]) {
             currentUserLikeThePhoto = YES;
         }
@@ -180,9 +175,14 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
 
-    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:section];
+//    Photo *currentPhotoObject = [self.photoObjectsArray objectAtIndex:section];
 
-    NSString *timeStampString = [self calculateTimeStampString:currentPhotoObject];
+    PhotoWrapper *currentPhotoWrapperObject = [self.photoObjectsArray objectAtIndex:section];
+    Photo *currentParsePhotoObject = [currentPhotoWrapperObject performSelector:@selector(parsePhotoObject)];
+
+    PFUser *photoOwner = currentParsePhotoObject.user;
+
+    NSString *timeStampString = [self calculateTimeStampString:currentParsePhotoObject];
 
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 200)];
 
@@ -193,7 +193,8 @@
     UILabel *userNamelabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 5, tableView.frame.size.width, 40)];
     [userNamelabel setFont:[UIFont boldSystemFontOfSize:12]];
     userNamelabel.textColor = [UIColor blueColor];
-    NSString *userNamestring = @"User name goes here";
+    NSString *userNamestring = @"username goes here";
+//    NSLog(@"userNamestring is %@", userNamestring);
 
     UILabel *timeStampLabel = [[UILabel alloc] initWithFrame:CGRectMake(290, 5, tableView.frame.size.width, 40)];
     [timeStampLabel setFont:[UIFont systemFontOfSize:12]];
@@ -228,7 +229,7 @@
     NSTimeInterval distanceBetweenDates = [date1 timeIntervalSinceDate:date2];
     double secondsInAnHour = 3600;
     NSInteger hoursBetweenDates = distanceBetweenDates / secondsInAnHour;
-    timeStampString = [NSString stringWithFormat:@"%ih",hoursBetweenDates];
+    timeStampString = [NSString stringWithFormat:@"%lih",(long)hoursBetweenDates];
 
     double daysBetweenDates = floor(hoursBetweenDates/24);
 
@@ -247,7 +248,11 @@
 
 - (IBAction)likeButtonTapped:(UIButton *)sender
 {
-    Photo *selectedPhotoObject = [self.photoObjectsArray objectAtIndex:sender.tag];
+//    Photo *selectedPhotoObject = [self.photoObjectsArray objectAtIndex:sender.tag];
+
+    PhotoWrapper *currentPhotoWrapperObject = [self.photoObjectsArray objectAtIndex:sender.tag];
+
+    Photo *currentParsePhotoObject = [currentPhotoWrapperObject performSelector:@selector(parsePhotoObject)];
 
     self.isLiked =! self.isLiked;
 
@@ -256,16 +261,14 @@
         [sender setTitle:@"Liked" forState:UIControlStateNormal];
         [sender setBackgroundColor:[UIColor grayColor]];
         [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.modelManager postNewLikeOnPhoto:selectedPhotoObject byUser:[PFUser currentUser]];
-
+        [self.modelManager postNewLikeOnPhoto:currentParsePhotoObject byUser:[PFUser currentUser]];
     }
     else
     {
         [sender setTitle:@"Like" forState:UIControlStateNormal];
         [sender setBackgroundColor:[UIColor whiteColor]];
         [sender setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [self.modelManager removeLikeOnPhoto:selectedPhotoObject byUser:[PFUser currentUser]];
-
+        [self.modelManager removeLikeOnPhoto:currentParsePhotoObject byUser:[PFUser currentUser]];
     }
 
 }
@@ -274,7 +277,10 @@
 {
     if ([segue.identifier isEqualToString:@"CommentSegue"])
     {
-        Photo *selectedPhotoObject = [self.photoObjectsArray objectAtIndex:sender.tag];
+        PhotoWrapper *currentPhotoWrapperObject = [self.photoObjectsArray objectAtIndex:sender.tag];
+
+        Photo *selectedPhotoObject = [currentPhotoWrapperObject performSelector:@selector(parsePhotoObject)];
+
         CommentViewController *destinationVC = segue.destinationViewController;
         destinationVC.photoObjectToBeCommentedOn = selectedPhotoObject;
     }
