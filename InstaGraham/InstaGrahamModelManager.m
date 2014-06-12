@@ -98,7 +98,7 @@ typedef enum {
 //        [photosQuery whereKey:@"user" equalTo:@"LtSAJ6U9rY"];
         [photosQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             NSMutableArray *photoWrappers = [[NSMutableArray alloc] init];
-            NSInteger numberOfPhotos = objects.count;
+            NSInteger numberOfPhotos = userIdArray.count;
             for (Photo *curPhoto in objects)
             {
                 PFUser *userObj = curPhoto[@"user"];
