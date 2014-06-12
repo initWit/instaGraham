@@ -64,8 +64,39 @@ typedef enum {
 {
     if (completion)
     {
-        PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo"];
-//        [query whereKey:@"user" equalTo:user];
+        __block NSMutableString *predicateString = [[NSMutableString alloc] initWithFormat:@"user = '%@'",user.objectId];
+
+        if (includingFollowings)
+        {
+            PFRelation *followsRelation = [user relationForKey:@"follows"];
+            PFQuery *followsQuery = [followsRelation query];
+
+            [followsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                for (PFUser *user in objects)
+                {
+                    NSString *userPredicateAppend = [NSString stringWithFormat:@" OR user = '%@'",user.objectId];
+                    [predicateString appendString:userPredicateAppend];
+                }
+
+                NSPredicate *builtPhotoPredicate = [NSPredicate predicateWithFormat:predicateString];
+                [self pullPhotoSetWithPredicate:builtPhotoPredicate completion:completion];
+            }];
+        }
+        else
+        {
+            NSPredicate *origUserOnlyPredicate = [NSPredicate predicateWithFormat:predicateString];
+            [self pullPhotoSetWithPredicate:origUserOnlyPredicate completion:completion];
+        }
+
+    }
+}
+
+
+- (void)pullPhotoSetWithPredicate:(NSPredicate *)photoSearchPredicate completion:(void (^)(NSArray *photoSet))completion
+{
+    if (completion)
+    {
+        PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo" predicate:photoSearchPredicate];
         [photosQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             NSMutableArray *photoWrappers = [[NSMutableArray alloc] init];
             NSInteger numberOfPhotos = objects.count;
@@ -76,7 +107,7 @@ typedef enum {
                 PhotoWrapper *curPhotoWrapper = [[PhotoWrapper alloc] initWithParsePhotoObject:curPhoto];
                 [commentsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     curPhotoWrapper.comments = objects;
-//                    NSLog(@"photo: %@ - comments: %@", curPhoto, objects);
+                    //                    NSLog(@"photo: %@ - comments: %@", curPhoto, objects);
                     PFRelation *likersRelation = [curPhoto relationForKey:@"likers"];
                     PFQuery *likersQuery = [likersRelation query];
 
