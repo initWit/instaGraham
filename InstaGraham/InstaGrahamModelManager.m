@@ -64,7 +64,7 @@ typedef enum {
 {
     if (completion)
     {
-        __block NSMutableString *predicateString = [[NSMutableString alloc] initWithFormat:@"user = '%@'",user.objectId];
+        __block NSMutableString *predicateString = [[NSMutableString alloc] initWithFormat:@"user = 'LtSAJ6U9rY'"];
 
         if (includingFollowings)
         {
@@ -96,12 +96,18 @@ typedef enum {
 {
     if (completion)
     {
-        PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo" predicate:photoSearchPredicate];
+        PFQuery *photosQuery = [PFQuery queryWithClassName:@"Photo"];
+        [photosQuery includeKey:@"user"];
+//        [photosQuery whereKey:@"user" equalTo:@"LtSAJ6U9rY"];
         [photosQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             NSMutableArray *photoWrappers = [[NSMutableArray alloc] init];
             NSInteger numberOfPhotos = objects.count;
             for (Photo *curPhoto in objects)
             {
+//                BOOL userFound = NO;
+//                for (NSString *curUserIdSet in )
+                if ([[curPhoto.user objectForKey:@"objectID"] isEqualToString:@"LtSAJ6U9rY"])
+                {
                 PFRelation *commentsRelation = [curPhoto relationForKey:@"comments"];
                 PFQuery *commentsQuery = [commentsRelation query];
                 PhotoWrapper *curPhotoWrapper = [[PhotoWrapper alloc] initWithParsePhotoObject:curPhoto];
@@ -125,6 +131,8 @@ typedef enum {
                         }
                     }];
                 }];
+
+                }
             }
         }];
     }

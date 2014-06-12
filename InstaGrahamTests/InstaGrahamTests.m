@@ -32,7 +32,7 @@
     [PFUser logInWithUsernameInBackground:@"Chuck" password:@"Norris" block:^(PFUser *user, NSError *error) {
         chuckNorrisUser = user;
 
-        [iGModelManager getPhotoSetOnUser:user includingFollowings:YES completion:^(NSArray *photoSet) {
+        [iGModelManager getPhotoSetOnUser:user includingFollowings:NO completion:^(NSArray *photoSet) {
             NSLog(@"in completion block of getPhotoSetOnUser in XCTest photoSet contains: %@",photoSet);
             for (PhotoWrapper *curPhoto in photoSet)
             {
@@ -56,23 +56,23 @@
 }
 
 
-- (void)testPostComment
-{
-    InstaGrahamModelManager *iGModelManager = [[InstaGrahamModelManager alloc] init];
-    __block PFUser *chuckNorrisUser = nil;
-    [PFUser logInWithUsernameInBackground:@"Chuck" password:@"Norris" block:^(PFUser *user, NSError *error) {
-        chuckNorrisUser = user;
-        PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
-        [query whereKey:@"objectId" equalTo:@"Hwf6crgwbb"];
-        NSArray *photosArray = [query findObjects];
-
-        Photo *testPhoto = [photosArray objectAtIndex:0];
-        [iGModelManager postNewComment:@"Test Comment from XCTest" onPhoto:testPhoto byUser:chuckNorrisUser];
-
-        XCTAssertEqualObjects(@"Chuck", [chuckNorrisUser objectForKey:@"username"]);
-    }];
-
-}
+//- (void)testPostComment
+//{
+//    InstaGrahamModelManager *iGModelManager = [[InstaGrahamModelManager alloc] init];
+//    __block PFUser *chuckNorrisUser = nil;
+//    [PFUser logInWithUsernameInBackground:@"Chuck" password:@"Norris" block:^(PFUser *user, NSError *error) {
+//        chuckNorrisUser = user;
+//        PFQuery *query = [PFQuery queryWithClassName:@"Photo"];
+//        [query whereKey:@"objectId" equalTo:@"Hwf6crgwbb"];
+//        NSArray *photosArray = [query findObjects];
+//
+//        Photo *testPhoto = [photosArray objectAtIndex:0];
+//        [iGModelManager postNewComment:@"Test Comment from XCTest" onPhoto:testPhoto byUser:chuckNorrisUser];
+//
+//        XCTAssertEqualObjects(@"Chuck", [chuckNorrisUser objectForKey:@"username"]);
+//    }];
+//
+//}
 @end
 
 
