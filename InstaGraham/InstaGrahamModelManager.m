@@ -106,8 +106,10 @@ typedef enum {
             {
 //                BOOL userFound = NO;
 //                for (NSString *curUserIdSet in )
-                if ([[curPhoto.user objectForKey:@"objectID"] isEqualToString:@"LtSAJ6U9rY"])
-                {
+//                PFUser *userObj = curPhoto[@"user"];
+//                NSString *userId = userObj.objectId;
+//                if ([userId isEqualToString:@"LtSAJ6U9rY"])
+//                {
                 PFRelation *commentsRelation = [curPhoto relationForKey:@"comments"];
                 PFQuery *commentsQuery = [commentsRelation query];
                 PhotoWrapper *curPhotoWrapper = [[PhotoWrapper alloc] initWithParsePhotoObject:curPhoto];
@@ -132,7 +134,7 @@ typedef enum {
                     }];
                 }];
 
-                }
+//                }
             }
         }];
     }
