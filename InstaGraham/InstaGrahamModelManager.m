@@ -11,6 +11,11 @@
 #import "Comment.h"
 #import "PhotoWrapper.h"
 
+typedef enum {
+    IGOperationTypeLikeAdd,
+    IGOperationTypeLikeRemove
+} IGOperationType;
+
 
 @interface InstaGrahamModelManager ()
 
@@ -75,15 +80,15 @@
                     PFRelation *likersRelation = [curPhoto relationForKey:@"likers"];
                     PFQuery *likersQuery = [likersRelation query];
 
-//                    [likersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//                        curPhotoWrapper.likers = objects;
+                    [likersQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                        curPhotoWrapper.likers = objects;
                         [photoWrappers addObject:curPhotoWrapper];
                         if (photoWrappers.count == numberOfPhotos)
                         {
                             NSArray *immutablePhotoWrappersArray = [NSArray arrayWithArray:photoWrappers];
                             completion(immutablePhotoWrappersArray);
                         }
-//                    }];
+                    }];
                 }];
             }
         }];
@@ -99,6 +104,13 @@
 
 - (void)postNewPhoto:(Photo *)photo byUser:(PFUser *)user;
 {
+    photo.user = user;
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in getPhotoSetOfLikesOfUser:completion:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 
 }
 
@@ -133,19 +145,58 @@
 
 - (void)postNewComment:(NSString *)comment onPhoto:(Photo *)photo byUser:(PFUser *)user
 {
+    PFObject *newComment = [PFObject objectWithClassName:@"Comment"];
+    [newComment setObject:comment forKey:@"commentText"];
+    [newComment setObject:user.objectId forKey:@"user"];
+    [newComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in postNewComment:onPhoto:byUser:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 
+    PFRelation *commentsRelation = [photo relationForKey:@"comments"];
+    [commentsRelation addObject:newComment];
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in postNewComment:onPhoto:byUser:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 }
 
 
 - (void)postNewLikeOnPhoto:(Photo *)photo byUser:(PFUser *)user
 {
-
+    [self updateLikeOnPhoto:photo forUser:user operation:IGOperationTypeLikeAdd];
 }
 
 
 - (void)removeLikeOnPhoto:(Photo *)photo byUser:(PFUser *)user
 {
+    [self updateLikeOnPhoto:photo forUser:user operation:IGOperationTypeLikeRemove];
+}
 
+
+- (void)updateLikeOnPhoto:(Photo *)photo forUser:(PFUser *)user operation:(IGOperationType)likeOperation
+{
+    PFRelation *currentLikersRelation = [photo relationForKey:@"likers"];
+
+    if (likeOperation == IGOperationTypeLikeAdd)
+    {
+        [currentLikersRelation addObject:user];
+    }
+    else
+    {
+        [currentLikersRelation removeObject:user];
+    }
+
+    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in postNewComment:onPhoto:byUser:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 }
 
 

@@ -39,6 +39,20 @@
 		66F12FDC1947D3B50088C821 /* 1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FDB1947D3B50088C821 /* 1st.png */; };
 		66F12FE21947EB8A0088C821 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FE11947EB8A0088C821 /* cameraIcon.png */; };
 		66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */; };
+		951E897519491B180020FDA9 /* PhotoWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 951E897419491B180020FDA9 /* PhotoWrapper.m */; };
+		951E8976194923910020FDA9 /* PhotoWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 951E897419491B180020FDA9 /* PhotoWrapper.m */; };
+		951E89771949244E0020FDA9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B085194772AD00D6D3BD /* Accounts.framework */; };
+		951E8978194924550020FDA9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01919467D0E00D6D3BD /* AudioToolbox.framework */; };
+		951E89791949245C0020FDA9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01B19467D1500D6D3BD /* CFNetwork.framework */; };
+		951E897A194924670020FDA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622AFE419467A3000D6D3BD /* CoreGraphics.framework */; };
+		951E897B194924700020FDA9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01D19467D1E00D6D3BD /* CoreLocation.framework */; };
+		951E897C1949249B0020FDA9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B01F19467D2800D6D3BD /* libz.dylib */; };
+		951E897D194924AE0020FDA9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02119467D3800D6D3BD /* MobileCoreServices.framework */; };
+		951E897E194924BD0020FDA9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02319467D3D00D6D3BD /* QuartzCore.framework */; };
+		951E897F194924C80020FDA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02519467D4200D6D3BD /* Security.framework */; };
+		951E8980194924E70020FDA9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B0831947721200D6D3BD /* Social.framework */; };
+		951E8981194924F20020FDA9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02719467D4600D6D3BD /* StoreKit.framework */; };
+		951E8982194924F90020FDA9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622B02919467D5000D6D3BD /* SystemConfiguration.framework */; };
 		95576CDA19471F25008D5757 /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95576CD919471F25008D5757 /* PostTableViewCell.m */; };
 		959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18C19477E8D00580948 /* InstaGrahamModelManager.m */; };
 		959DF1901947CE9900580948 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 959DF18F1947CE9900580948 /* Comment.m */; };
@@ -97,6 +111,8 @@
 		66F12FE11947EB8A0088C821 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 		66F12FE31947EC600088C821 /* PhotoCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCaptureViewController.h; sourceTree = "<group>"; };
 		66F12FE41947EC600088C821 /* PhotoCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCaptureViewController.m; sourceTree = "<group>"; };
+		951E897319491B180020FDA9 /* PhotoWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoWrapper.h; path = InstaGrahamTests/PhotoWrapper.h; sourceTree = SOURCE_ROOT; };
+		951E897419491B180020FDA9 /* PhotoWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoWrapper.m; path = InstaGrahamTests/PhotoWrapper.m; sourceTree = SOURCE_ROOT; };
 		95576CD819471F25008D5757 /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		95576CD919471F25008D5757 /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		959DF18B19477E8D00580948 /* InstaGrahamModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaGrahamModelManager.h; sourceTree = "<group>"; };
@@ -132,6 +148,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951E8982194924F90020FDA9 /* SystemConfiguration.framework in Frameworks */,
+				951E8981194924F20020FDA9 /* StoreKit.framework in Frameworks */,
+				951E8980194924E70020FDA9 /* Social.framework in Frameworks */,
+				951E897F194924C80020FDA9 /* Security.framework in Frameworks */,
+				951E897E194924BD0020FDA9 /* QuartzCore.framework in Frameworks */,
+				951E897D194924AE0020FDA9 /* MobileCoreServices.framework in Frameworks */,
+				951E897C1949249B0020FDA9 /* libz.dylib in Frameworks */,
+				951E897B194924700020FDA9 /* CoreLocation.framework in Frameworks */,
+				951E897A194924670020FDA9 /* CoreGraphics.framework in Frameworks */,
+				951E89791949245C0020FDA9 /* CFNetwork.framework in Frameworks */,
+				951E8978194924550020FDA9 /* AudioToolbox.framework in Frameworks */,
+				951E89771949244E0020FDA9 /* Accounts.framework in Frameworks */,
 				6622B00219467A3000D6D3BD /* XCTest.framework in Frameworks */,
 				6622B00419467A3000D6D3BD /* UIKit.framework in Frameworks */,
 				95D73DE61948D66E00920A89 /* Parse.framework in Frameworks */,
@@ -198,6 +226,8 @@
 				6622AFF819467A3000D6D3BD /* HomeViewController.m */,
 				66C2957519478ACD009CEE22 /* Photo.h */,
 				66C2957619478ACD009CEE22 /* Photo.m */,
+				951E897319491B180020FDA9 /* PhotoWrapper.h */,
+				951E897419491B180020FDA9 /* PhotoWrapper.m */,
 				959DF18E1947CE9900580948 /* Comment.h */,
 				959DF18F1947CE9900580948 /* Comment.m */,
 				95576CD819471F25008D5757 /* PostTableViewCell.h */,
@@ -340,6 +370,7 @@
 				959DF18D19477E8D00580948 /* InstaGrahamModelManager.m in Sources */,
 				6622AFF919467A3000D6D3BD /* HomeViewController.m in Sources */,
 				66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */,
+				951E8976194923910020FDA9 /* PhotoWrapper.m in Sources */,
 				6622AFF319467A3000D6D3BD /* AppDelegate.m in Sources */,
 				66F12FE51947EC600088C821 /* PhotoCaptureViewController.m in Sources */,
 				6622AFEF19467A3000D6D3BD /* main.m in Sources */,
@@ -354,6 +385,7 @@
 			files = (
 				6622B00E19467A3000D6D3BD /* InstaGrahamTests.m in Sources */,
 				95D73DE71948D69200920A89 /* InstaGrahamModelManager.m in Sources */,
+				951E897519491B180020FDA9 /* PhotoWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
