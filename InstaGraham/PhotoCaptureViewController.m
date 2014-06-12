@@ -66,7 +66,7 @@
     self.imagePicker = [[UIImagePickerController alloc]init];
     self.imagePicker.delegate = self;
     self.imagePicker.allowsEditing = YES;
-    self.imagePicker.videoMaximumDuration = 10; // *** limit the lenghth of the videos (10 sec)
+//    self.imagePicker.videoMaximumDuration = 10; // *** limit the lenghth of the videos (10 sec)
 
     // *** check to see if a camera source is available; if not, show the photo library instead ***/
 

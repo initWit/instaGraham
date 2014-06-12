@@ -126,7 +126,7 @@
 
     PhotoWrapper *currentPhotoWrapperObject = [self.photoObjectsArray objectAtIndex:indexPath.section];
 
-    Photo *currentParsePhotoObject = [currentPhotoWrapperObject performSelector:@selector(parsePhotoObject)];
+    Photo *currentParsePhotoObject = currentPhotoWrapperObject.parsePhotoObject;
 
     PFFile *imageFile = [currentParsePhotoObject objectForKey:@"image"];
 
@@ -286,6 +286,11 @@
         CommentViewController *destinationVC = segue.destinationViewController;
         destinationVC.photoObjectToBeCommentedOn = selectedPhotoObject;
     }
+}
+
+- (IBAction)unwindFromPhotoCaptureSegue:(UIStoryboardSegue *)segue
+{
+    [self.photoStreamTableView reloadData];
 }
 
 @end
