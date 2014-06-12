@@ -11,7 +11,6 @@
 
 @interface PhotoWrapper ()
 
-@property (strong, nonatomic) Photo *parsePhotoObject;
 
 @end
 

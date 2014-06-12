@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSString *caption;
+@property (strong, nonatomic) Photo *parsePhotoObject;
 
 - (id)initWithParsePhotoObject:(Photo *)parsePhotoObject;
 

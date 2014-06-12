@@ -116,7 +116,11 @@ typedef enum {
                         [photoWrappers addObject:curPhotoWrapper];
                         if (photoWrappers.count == numberOfPhotos)
                         {
-                            NSArray *immutablePhotoWrappersArray = [NSArray arrayWithArray:photoWrappers];
+                            NSSortDescriptor *dateSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"parsePhotoObject.createdAt" ascending:NO];
+                            NSLog(@"After sort (photoWrappers): %@",photoWrappers);
+
+                            NSArray *immutablePhotoWrappersArray = [photoWrappers sortedArrayUsingDescriptors:@[dateSortDescriptor]];
+                            NSLog(@"After sort (immutablePhotoWrappersArray): %@",immutablePhotoWrappersArray);
                             completion(immutablePhotoWrappersArray);
                         }
                     }];
@@ -156,12 +160,24 @@ typedef enum {
 
 - (void)getFollowSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followSet))completion
 {
-
+    PFRelation *followsRelation = [user relationForKey:@"follows"];
+    PFQuery *followsQuery = [followsRelation query];
+    [followsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in getPhotoSetOfLikesOfUser:completion:  -- error:\n%@",error.localizedDescription);
+        }
+        else
+        {
+            completion(objects);
+        }
+    }];
 }
 
 
 - (void)getFollowerSetOnUser:(PFUser *)user completion:(void (^)(NSArray *followerSet))completion
 {
+
 
 }
 
@@ -233,14 +249,30 @@ typedef enum {
 
 - (void)addNewFollowerToUser:(PFUser *)followedUser fromUser:(PFUser *)followingUser
 {
-
+    PFRelation *followsRelation = [followingUser relationForKey:@"follows"];
+    [followsRelation addObject:followedUser];
+    [followingUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in addNewFollowerToUser:fromUser:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 }
 
 
 - (void)removeNewFollowerToUser:(PFUser *)formerFollowedUser fromUser:(PFUser *)formerFollowingUser
 {
+    PFRelation *followsRelation = [formerFollowingUser relationForKey:@"follows"];
+    [followsRelation removeObject:formerFollowedUser];
+    [formerFollowingUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            NSLog(@"Error in removeNewFollowerToUser:fromUser:  -- error:\n%@",error.localizedDescription);
+        }
+    }];
 
 }
+
 
 //- (void)getPhotoSetOnUser:(PFUser *)user includingFollowings:(BOOL)includingFollowings completion:(void (^)(NSArray *photoSet, NSError *error))completion
 //{
