@@ -32,7 +32,7 @@
     [PFUser logInWithUsernameInBackground:@"Chuck" password:@"Norris" block:^(PFUser *user, NSError *error) {
         chuckNorrisUser = user;
 
-        [iGModelManager getPhotoSetOnUser:user includingFollowings:NO completion:^(NSArray *photoSet) {
+        [iGModelManager getPhotoSetOnUser:user includingFollowings:YES completion:^(NSArray *photoSet) {
             NSLog(@"in completion block of getPhotoSetOnUser in XCTest photoSet contains: %@",photoSet);
             for (PhotoWrapper *curPhoto in photoSet)
             {

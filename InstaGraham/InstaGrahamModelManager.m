@@ -64,7 +64,7 @@ typedef enum {
 {
     if (completion)
     {
-        __block NSMutableString *predicateString = [[NSMutableString alloc] initWithFormat:@"user = 'LtSAJ6U9rY'"];
+        __block NSMutableArray *userIdArray = [NSMutableArray arrayWithObject:user.objectId];
 
         if (includingFollowings)
         {
@@ -74,25 +74,22 @@ typedef enum {
             [followsQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 for (PFUser *user in objects)
                 {
-                    NSString *userPredicateAppend = [NSString stringWithFormat:@" OR user = '%@'",user.objectId];
-                    [predicateString appendString:userPredicateAppend];
+                    [userIdArray addObject:user.objectId];
                 }
 
-                NSPredicate *builtPhotoPredicate = [NSPredicate predicateWithFormat:predicateString];
-                [self pullPhotoSetWithPredicate:builtPhotoPredicate completion:completion];
+                [self pullPhotoSetWithUserIdArray:userIdArray completion:completion];
             }];
         }
         else
         {
-            NSPredicate *origUserOnlyPredicate = [NSPredicate predicateWithFormat:predicateString];
-            [self pullPhotoSetWithPredicate:origUserOnlyPredicate completion:completion];
+            [self pullPhotoSetWithUserIdArray:userIdArray completion:completion];
         }
 
     }
 }
 
 
-- (void)pullPhotoSetWithPredicate:(NSPredicate *)photoSearchPredicate completion:(void (^)(NSArray *photoSet))completion
+- (void)pullPhotoSetWithUserIdArray:(NSMutableArray *)userIdArray completion:(void (^)(NSArray *photoSet))completion
 {
     if (completion)
     {
@@ -104,12 +101,20 @@ typedef enum {
             NSInteger numberOfPhotos = objects.count;
             for (Photo *curPhoto in objects)
             {
-//                BOOL userFound = NO;
-//                for (NSString *curUserIdSet in )
-//                PFUser *userObj = curPhoto[@"user"];
-//                NSString *userId = userObj.objectId;
-//                if ([userId isEqualToString:@"LtSAJ6U9rY"])
-//                {
+                PFUser *userObj = curPhoto[@"user"];
+                NSString *userId = userObj.objectId;
+                BOOL userFound = NO;
+
+                for (NSString *curUserId in userIdArray)
+                {
+                    if ([curUserId isEqualToString:userId])
+                    {
+                        userFound = YES;
+                    }
+                }
+
+                if (userFound)
+                {
                 PFRelation *commentsRelation = [curPhoto relationForKey:@"comments"];
                 PFQuery *commentsQuery = [commentsRelation query];
                 PhotoWrapper *curPhotoWrapper = [[PhotoWrapper alloc] initWithParsePhotoObject:curPhoto];
@@ -134,7 +139,7 @@ typedef enum {
                     }];
                 }];
 
-//                }
+                }
             }
         }];
     }
