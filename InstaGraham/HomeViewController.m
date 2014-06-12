@@ -34,6 +34,7 @@
     [super viewDidLoad];
     self.photoObjectsArray = [[NSArray alloc] init];
     self.modelManager = [[InstaGrahamModelManager alloc] init];
+
 }
 
 
@@ -53,6 +54,10 @@
         self.photoObjectsArray = photoSet;
         [self.photoStreamTableView reloadData];
     }];
+
+//    NSMutableDictionary *titleBarAttributes = [NSMutableDictionary dictionaryWithDictionary: [[UINavigationBar appearance] titleTextAttributes]];
+//    [titleBarAttributes setValue:[UIFont fontWithName:@"JBCursive" size:16] forKey:NSFontAttributeName];
+//    [[UINavigationBar appearance] setTitleTextAttributes:titleBarAttributes];
 }
 
 

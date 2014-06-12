@@ -39,6 +39,7 @@
 		66CD2EE119495DEC00846B68 /* exploreIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE019495DEC00846B68 /* exploreIcon.png */; };
 		66CD2EE319495E8100846B68 /* profile1.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE219495E8100846B68 /* profile1.png */; };
 		66CD2EE51949628B00846B68 /* jlo.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE41949628B00846B68 /* jlo.png */; };
+		66CD2EE81949CC9A00846B68 /* JBCursive.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66CD2EE71949CC9A00846B68 /* JBCursive.otf */; };
 		66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FD61947C6D20088C821 /* heartIcon.jpeg */; };
 		66F12FDA1947CE8F0088C821 /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F12FD91947CE8F0088C821 /* CommentViewController.m */; };
 		66F12FDC1947D3B50088C821 /* 1st.png in Resources */ = {isa = PBXBuildFile; fileRef = 66F12FDB1947D3B50088C821 /* 1st.png */; };
@@ -101,6 +102,7 @@
 		66CD2EE019495DEC00846B68 /* exploreIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exploreIcon.png; sourceTree = "<group>"; };
 		66CD2EE219495E8100846B68 /* profile1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile1.png; sourceTree = "<group>"; };
 		66CD2EE41949628B00846B68 /* jlo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jlo.png; sourceTree = "<group>"; };
+		66CD2EE71949CC9A00846B68 /* JBCursive.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = JBCursive.otf; sourceTree = "<group>"; };
 		66F12FD61947C6D20088C821 /* heartIcon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = heartIcon.jpeg; sourceTree = "<group>"; };
 		66F12FD81947CE8F0088C821 /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		66F12FD91947CE8F0088C821 /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		6622AFE919467A3000D6D3BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				66CD2EE71949CC9A00846B68 /* JBCursive.otf */,
 				66CD2EE41949628B00846B68 /* jlo.png */,
 				66CD2EE219495E8100846B68 /* profile1.png */,
 				66CD2EE019495DEC00846B68 /* exploreIcon.png */,
@@ -338,6 +341,7 @@
 				6622AFF619467A3000D6D3BD /* Main.storyboard in Resources */,
 				66F12FE21947EB8A0088C821 /* cameraIcon.png in Resources */,
 				66F12FD71947C6D20088C821 /* heartIcon.jpeg in Resources */,
+				66CD2EE81949CC9A00846B68 /* JBCursive.otf in Resources */,
 				66F12FDC1947D3B50088C821 /* 1st.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
